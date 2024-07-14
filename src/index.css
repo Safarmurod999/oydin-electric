@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(/fonts/Inter-Light.ttf);
+  }
+  @font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/fonts/Inter-Regular.ttf);
+  }
+
+  @font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(/fonts/Inter-Medium.ttf);
+  }
+
+  @font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url(/fonts/Inter-SemiBold.ttf);
+  }
+
+  @font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(/fonts/Inter-Bold.ttf);
+  }
+
+  @font-face {
+    font-family: "Dacia Block";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/public/fonts/Dacia Block.otf");
+  }
+
+  @font-face {
+    font-family: "Dacia Block";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("/fonts/Dacia Block Bold.otf");
+  }
+
+  @font-face {
+    font-family: "Readex Pro";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/fonts/ReadexPro-Regular.ttf");
+  }
+
+  @font-face {
+    font-family: "Readex Pro";
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("/fonts/ReadexPro-SemiBold.ttf");
+  }
+}
