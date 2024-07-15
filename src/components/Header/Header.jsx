@@ -16,14 +16,14 @@ const Header = () => {
                             <img src={logo} alt="Logo" />
                         </a>
                     </div>
-                    <div className={`flex grow-[0.5] flex-col lg:flex-row items-start 
-                         lg:items-center justify-between absolute lg:static top-[140px]
-                         left-0 -translate-x-[100%] lg:translate-x-[0px] p-4 lg:p-0
-                         w-nav-mobile sm:w-[320px] lg:w-auto rounded-lg bg-gray lg:bg-transparent transition duration-300
-                         drop-shadow-lg lg:drop-shadow-none
+                    <div className={`flex grow-[0.5] flex-col xl:flex-row items-start 
+                         xl:items-center justify-between absolute xl:static top-[135px]
+                         left-0 -translate-x-[100%] xl:translate-x-[0px] p-4 xl:p-0
+                         w-nav-mobile sm:w-[320px] xl:w-auto rounded-xl bg-gray xl:bg-transparent transition duration-300
+                         drop-shadow-xl xl:drop-shadow-none
                          ${openNavbar ? 'translate-x-[15px]' : '-translate-x-[100%]'}`}>
                         <div className="navbar-main ">
-                            <ul className="navbar-menu flex flex-col lg:flex-row items-start lg:items-center justify-center">
+                            <ul className="navbar-menu flex flex-col xl:flex-row items-start xl:items-center justify-center">
                                 <li className="navbar-item text-dark-gray font-bold">
                                     <Dropdown title={'Kategoriyalar'} />
                                 </li>
@@ -41,7 +41,7 @@ const Header = () => {
                                 </li>
                             </ul>
                         </div>
-                        <div className="navbar-contact flex items-center gap-[15px] p-3 lg:p-0">
+                        <div className="navbar-contact flex items-center gap-[15px] p-3 xl:p-0">
                             <a href="tel:+998 71 184 11 81" className="navbar-link bg-blue py-[16px] px-[25px] rounded-2xl">
                                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fillRule="evenodd" clipRule="evenodd" d="M10.1956 11.6406C13.5902 15.0343 14.599 10.8692 16.7601 13.0285C18.8445 15.112 20.0415 15.5284 17.4023 18.1676C17.0704 18.4334 14.9701 21.6308 7.58684 14.2495C0.203639 6.86802 3.39755 4.7649 3.66334 4.43401C6.30963 1.78773 6.71991 2.9918 8.8034 5.07529C10.9636 7.23549 6.80107 8.24691 10.1956 11.6406Z" stroke="#F8F9FF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -57,14 +57,21 @@ const Header = () => {
                             </a>
                         </div>
                     </div>
-                    <button className='flex lg:hidden p-[10px] rounded-[13px] border-[1.5px] border-[#3A3A3B]' onClick={() => setOpenNavbar(!openNavbar)}>
-                        <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="5.33325" y="9.3335" width="16" height="4" rx="2" fill="#000000" />
-                            <rect x="21.3333" y="28" width="16" height="4" rx="2" fill="#000000" />
-                            <rect opacity="0.6" x="5.33325" y="28" width="8" height="4" rx="2" fill="#000000" />
-                            <rect opacity="0.6" x="29.3333" y="9.3335" width="8" height="4" rx="2" fill="#000000" />
-                            <rect x="5.33325" y="18.6665" width="32" height="4" rx="2" fill="#000000" />
-                        </svg>
+                    <button className='flex xl:hidden p-[10px] rounded-[13px] border-[1.5px] border-[#3A3A3B]' onClick={() => setOpenNavbar(!openNavbar)}>
+                        {
+                            !openNavbar ? <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="5.33325" y="9.3335" width="16" height="4" rx="2" fill="#000000" />
+                                <rect x="21.3333" y="28" width="16" height="4" rx="2" fill="#000000" />
+                                <rect opacity="0.6" x="5.33325" y="28" width="8" height="4" rx="2" fill="#000000" />
+                                <rect opacity="0.6" x="29.3333" y="9.3335" width="8" height="4" rx="2" fill="#000000" />
+                                <rect x="5.33325" y="18.6665" width="32" height="4" rx="2" fill="#000000" />
+                            </svg> :
+                                <svg width="42" height="42" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect opacity="0.6" x="6.5" y="4" width="7.42857" height="2.28571" rx="1.14286" transform="rotate(42 6.5 4)" fill="#000000" />
+                                    <rect opacity="0.6" x="15.0713" y="12" width="7.42857" height="2.28571" rx="1.14286" transform="rotate(42 15.0713 12)" fill="#000000" />
+                                    <rect x="5.35718" y="16.5713" width="18.2857" height="2.28571" rx="1.14286" transform="rotate(-42 5.35718 16.5713)" fill="#000000" />
+                                </svg>
+                        }
                     </button>
                 </Container>
             </nav>

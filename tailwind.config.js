@@ -33,7 +33,11 @@ module.exports = {
       },
       width: {
         "nav-mobile": "calc(100% - 30px)",
+        "brand-width": "calc(50% - 12px)",
       },
+      screens:{
+        'xs':'480px'
+      }
     },
   },
   plugins: [flowbite.plugin()],
