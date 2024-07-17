@@ -38,10 +38,7 @@ module.exports = {
       screens: {
         xs: "480px",
         xxs: "335px",
-        "3xl": "1700px",
-      },
-      backgroundImage:{
-        "btn":"url(@/assets/images/button-bg.svg)"
+        "3xl": "1710px",
       }
     },
   },
