@@ -57,7 +57,7 @@ const Home = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 3xl:grid-cols-3 gap-8 grow mb-12">
                 {
                   productsArray.map(el => {
-                    return <div key={el.id} className="flex flex-col relative">
+                    return <div key={el.id} className="flex flex-col relative w-full">
                       <div className="w-full relative flex items-center justify-center pt-[55px] 3xl:pt-[75px] px-[60px] 3xl:px-[80px] pb-[45px] z-10">
                         <img src={el.image} alt={el.image} className="w-full z-10" />
                         <img src={el.logo} alt={el.logo} className="absolute top-[30px] left-[30px] w-[70px] 3xl:w-[108px] z-10" />
