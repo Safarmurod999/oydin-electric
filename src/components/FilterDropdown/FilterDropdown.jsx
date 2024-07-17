@@ -16,7 +16,7 @@ const FilterDropdown = ({ title, offset, array }) => {
         }
     }
     return (
-        <div className="w-[300px] 3xl:w-[396px] border border-[#BAC0D0] rounded-lg p-[24px] pb-[32px] bg-gray mb-6">
+        <div className="w-full md:w-[300px] 3xl:w-[396px] border border-[#BAC0D0] rounded-lg p-[24px] pb-[32px] bg-gray mb-6">
             <div className="flex justify-between items-center gap-[15px] border-b border-[#BAC0D0] pb-[12px]" onClick={() => setToggleDrop(!toggleDrop)}>
                 <div className="text-[18px] font-semibold uppercase text-black font-inter">{title}</div>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

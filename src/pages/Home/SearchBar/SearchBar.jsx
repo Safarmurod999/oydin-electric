@@ -25,7 +25,7 @@ const SearchBar = () => {
             {/* Filter and Layout */}
             <div className="w-full md:w-auto flex justify-between md:justify-center items-center gap-3">
                 {/* Filter */}
-                <div className="w-[170px] xl:w-[264px] relative inline-block text-left">
+                <div className="grow md:w-[170px] xl:w-[264px] relative inline-block text-left">
                     <div>
                         <button className="inline-flex w-full justify-between
                             gap-x-1.5 rounded-lg bg-white ps-[10px] lg:ps-[20px] pe-[10px] lg:pe-[14px] 
@@ -42,7 +42,7 @@ const SearchBar = () => {
                         </button>
                     </div>
 
-                    <div className={`absolute right-0 z-10 mt-2 w-full origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none ${openSelect ? 'block' : 'hidden'}`} aria-orientation="vertical">
+                    <div className={`absolute right-0 z-20 mt-2 w-full origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none ${openSelect ? 'block' : 'hidden'}`} aria-orientation="vertical">
                         <div className="py-1" role="none">
                             <div className="block px-4 py-2 text-sm text-dark-gray hover:bg-[#F3F4F6] cursor-pointer" onClick={() => handleFilter("So'nggi Tovarlar")} id="menu-item-0">So'nggi Tovarlar</div>
                             <div className="block px-4 py-2 text-sm text-dark-gray hover:bg-[#F3F4F6] cursor-pointer" onClick={() => handleFilter("Eng ko'p sotilgan tovarlar")} id="menu-item-1">Eng ko'p sotilgan tovarlar</div>
