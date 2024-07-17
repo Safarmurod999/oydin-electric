@@ -6,7 +6,7 @@ const Layout = () => {
     return (
         <>
             <Header />
-            <main className='pt-[194px]'>
+            <main className='pt-[120px] sm:pt-[150px] md:pt-[170px] lg:pt-[194px] bg-[#FAFAFA]'>
                 <Outlet />
             </main>
             {/* <Footer /> */}
@@ -14,4 +14,4 @@ const Layout = () => {
     )
 }
 
-export default Layout
+export default Layout   

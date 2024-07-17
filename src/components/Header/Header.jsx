@@ -9,7 +9,7 @@ const Header = () => {
     const [openNavbar, setOpenNavbar] = useState(false);
     return (
         <header className='fixed w-full top-0 left-0 z-50'>
-            <nav className='relative py-[30px] bg-gray rounded-b-[24px] '>
+            <nav className='relative py-[15px] lg:py-[30px] bg-gray rounded-b-[24px] '>
                 <Container style={'flex items-center justify-between'}>
                     <div className='navbar-logo'>
                         <a href="/">
@@ -17,7 +17,7 @@ const Header = () => {
                         </a>
                     </div>
                     <div className={`flex grow-[0.5] flex-col xl:flex-row items-start 
-                         xl:items-center justify-between absolute xl:static top-[135px]
+                         xl:items-center justify-between absolute xl:static top-[100px] lg:top-[135px]
                          left-0 -translate-x-[100%] xl:translate-x-[0px] p-4 xl:p-0
                          w-nav-mobile sm:w-[320px] xl:w-auto rounded-xl bg-gray xl:bg-transparent transition duration-300
                          drop-shadow-xl xl:drop-shadow-none

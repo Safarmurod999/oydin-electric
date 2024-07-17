@@ -1,8 +1,7 @@
 /** @type {import('tailwindcss').Config} */
-// const flowbite = require("flowbite-react/tailwind");
-import flowbite from "flowbite-react/tailwind";
+
 module.exports = {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}", flowbite.content()],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       container: {
@@ -33,12 +32,17 @@ module.exports = {
       },
       width: {
         "nav-mobile": "calc(100% - 30px)",
-        "brand-width": "calc(50% - 12px)",
+        "col-3": "calc(100% / 3 - 10px)",
+        "brand-width": "calc(50% - 8px)",
       },
-      screens:{
-        'xs':'480px'
+      screens: {
+        xs: "480px",
+        xxs: "335px",
+        "3xl": "1700px",
+      },
+      backgroundImage:{
+        "btn":"url(@/assets/images/button-bg.svg)"
       }
     },
   },
-  plugins: [flowbite.plugin()],
 };
