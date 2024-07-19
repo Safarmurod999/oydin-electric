@@ -44,9 +44,9 @@ const SearchBar = () => {
 
                     <div className={`absolute right-0 z-20 mt-2 w-full origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none ${openSelect ? 'block' : 'hidden'}`} aria-orientation="vertical">
                         <div className="py-1" role="none">
-                            <div className="block px-4 py-2 text-sm text-dark-gray hover:bg-[#F3F4F6] cursor-pointer" onClick={() => handleFilter("So'nggi Tovarlar")} id="menu-item-0">So'nggi Tovarlar</div>
-                            <div className="block px-4 py-2 text-sm text-dark-gray hover:bg-[#F3F4F6] cursor-pointer" onClick={() => handleFilter("Eng ko'p sotilgan tovarlar")} id="menu-item-1">Eng ko'p sotilgan tovarlar</div>
-                            <div className="block px-4 py-2 text-sm text-dark-gray hover:bg-[#F3F4F6] cursor-pointer" onClick={() => handleFilter('Eng yaxshi tovarlar')} id="menu-item-2">Eng yaxshi tovarlar</div>
+                            <div className="block px-4 py-2 text-dark-gray hover:bg-[#F3F4F6] cursor-pointer" onClick={() => handleFilter("So'nggi Tovarlar")} id="menu-item-0">So'nggi Tovarlar</div>
+                            <div className="block px-4 py-2 text-dark-gray hover:bg-[#F3F4F6] cursor-pointer" onClick={() => handleFilter("Eng ko'p sotilgan tovarlar")} id="menu-item-1">Eng ko'p sotilgan tovarlar</div>
+                            <div className="block px-4 py-2 text-dark-gray hover:bg-[#F3F4F6] cursor-pointer" onClick={() => handleFilter('Eng yaxshi tovarlar')} id="menu-item-2">Eng yaxshi tovarlar</div>
                         </div>
                     </div>
                 </div>

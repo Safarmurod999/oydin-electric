@@ -47,7 +47,7 @@
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url("/public/fonts/Dacia Block.otf");
+    src: url("/fonts/Dacia Block.otf");
   }
 
   @font-face {

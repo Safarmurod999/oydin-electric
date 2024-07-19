@@ -5,6 +5,7 @@ import Aside from "./Aside/Aside"
 import { productsArray } from "@/const/data"
 import corner from "@/assets/images/corner.png"
 import { useState } from "react"
+import { Pagination } from "../../components"
 const Home = () => {
   const [openAside, setOpenAside] = useState(false);
   return (
@@ -114,6 +115,13 @@ const Home = () => {
                     </div>
                   })
                 }
+              </div>
+              <div className="mt-6">
+                <Pagination itemsPerPage={9} 
+                totalItems={200}
+                currentPage={1}
+                offset={0}
+                />
               </div>
             </div>
           </div>
