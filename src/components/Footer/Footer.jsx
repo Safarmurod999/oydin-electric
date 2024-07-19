@@ -5,7 +5,7 @@ import footer_form from "@/assets/images/footer-form.png"
 
 const Footer = () => {
     return (
-        <footer className='pt-[40px] xs:pt-[60px] sm:pt-[80px] md:pt-[100px] lg:pt-[120px] xl:pt-[150px] 3xl:pt-[180px] pt-[30px] sm:pt-[40px] lg:pt-[60px] 3xl:pb-[80px] bg-[#11141C] rounded-t-3xl'>
+        <footer className='pt-[40px] xs:pt-[60px] sm:pt-[80px] md:pt-[100px] lg:pt-[120px] xl:pt-[150px] 3xl:pt-[180px] pb-[30px] sm:pb-[40px] lg:pb-[60px] 3xl:pb-[80px] bg-[#11141C] rounded-t-3xl'>
             <Container>
                 <div className="w-full bg-gray h-[1px] opacity-30 mb-[20px]"></div>
                 <div className="w-full flex justify-between items-start mb-[40px] sm:mb-[60px] md:mb-[80px] xl:mb-[100px] 3xl:mb-[160px]">

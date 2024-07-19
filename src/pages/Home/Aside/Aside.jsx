@@ -4,7 +4,7 @@ import { productArray } from "@/const/data.js"
 import { companyArray } from '@/const/data'
 const Aside = ({ openAside, setOpenAside }) => {
     return (
-        <aside className={`fixed top-[100px] md:top-[110px] left-0 grow h-[91svh] xl:static p-6 xl:p-0 overflow-y-scroll xl:overflow-y-visible
+        <aside className={`aside fixed top-[100px] w-full sm:w-auto md:top-[110px] left-0 grow h-[91svh] xl:static p-6 xl:p-0 overflow-y-scroll xl:overflow-y-visible
             drop-shadow-lg xl:drop-shadow-none rounded-lg transition duration-300 xl:translate-x-0
             bg-white xl:bg-transparent z-20 ${openAside ? 'translate-x-0' : '-translate-x-[100%]'}`}>
             <button className='block xl:hidden mb-6 ml-auto' onClick={() => setOpenAside(false)}>
