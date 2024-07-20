@@ -39,6 +39,9 @@ module.exports = {
         xs: "480px",
         xxs: "335px",
         "3xl": "1710px",
+      },
+      backgroundImage:{
+        'footer-bottom':'url(@/assets/images/footer-bottom.png)'
       }
     },
   },
