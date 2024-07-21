@@ -36,7 +36,7 @@ const ProductInner = () => {
                         <path d="M0 7.99999C0 3.58171 3.58172 0 8 0H18V64H15.8846C13.289 64 10.8548 62.7408 9.35511 60.6223L1.47053 49.4847C0.513802 48.1332 0 46.5182 0 44.8623V7.99999Z" fill="#FAFAFA" />
                         <path d="M8 0.5H17.5V63.5H15.8846C13.4513 63.5 11.1692 62.3195 9.7632 60.3334L1.87862 49.1958C0.981689 47.9288 0.5 46.4147 0.5 44.8623V7.99999C0.5 3.85785 3.85786 0.5 8 0.5Z" stroke="#66708D" strokeOpacity="0.3" />
                     </svg>
-                    <a href="/catalog" className='flex items-center justify-center gap-[10px] border-y border-y-light-gray -mx-[1px] w-[234px]'>
+                    <a href="/" className='flex items-center justify-center gap-[10px] border-y border-y-light-gray -mx-[1px] w-[234px]'>
                         <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4.60425 13.2969L20.8542 13.2969" stroke="#01040E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                             <path d="M11.1582 19.8236L4.60404 13.2976L11.1582 6.77051" stroke="#01040E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -50,6 +50,7 @@ const ProductInner = () => {
                 </div>
                 {/* PAGE CONTENT */}
                 <div className="flex flex-col inner:flex-row gap-[32px] pb-[200px]">
+                    {/* Product Images */}
                     <div className="w-full xl:w-[654px]">
                         <Swiper
                             style={{
@@ -188,6 +189,7 @@ const ProductInner = () => {
                             </SwiperSlide>
                         </Swiper>
                     </div>
+                    {/* Product Details */}
                     <div className="w-full xl:w-[500px] 3xl:w-[620px]">
                         <div className="font-inter text-dark-gray text-[18px] uppercase mb-[10px]">{data.brand}</div>
                         <div className="font-dacia font-bold text-[30px] sm:text-[42px] text-black mb-[40px]">{data.name}</div>
@@ -248,6 +250,16 @@ const ProductInner = () => {
                         </div>
                     </div>
                 </div>
+
+                <div className="w-full bg-dark-gray h-[1px] opacity-30 mb-[20px]"></div>
+                <div className="w-full flex justify-between items-start mb-[40px] sm:mb-[60px] md:mb-[80px] xl:mb-[100px] 3xl:mb-[160px]">
+                    <p className='text-dark-gray uppercase font-dacia opacity-30 tracking-[1%]'>02/</p>
+                    <p className='text-dark-gray uppercase font-dacia opacity-30 tracking-[1%]'>MAHSULOTLARIMIZ</p>
+                </div>
+                <div className='mx-auto max-w-[960px] text-2xl xs:text-3xl sm:text-4xl md:text-5xl xl:text-6xl text-black text-center font-dacia font-bold '>
+                    O’XSHASH MAHSULOTLARIMIZ
+                </div>
+                
             </Container>
         </section>
     )
