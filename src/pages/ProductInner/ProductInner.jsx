@@ -37,7 +37,7 @@ const ProductInner = () => {
                         <path d="M8 0.5L18 0.5L18 63.5H15.3683C12.8642 63.5 10.5252 62.2503 9.13344 60.1686L1.76517 49.1479C0.940299 47.9142 0.5 46.4635 0.5 44.9794L0.5 7.99999C0.5 3.85785 3.85786 0.5 8 0.5Z" stroke="#66708D" stroke-opacity="0.3" />
                     </svg>
 
-                    <a href="/catalog" className='flex items-center justify-center gap-[10px] border-y md:border-y-2 border-y-light-gray -mx-[1px] w-[234px]'>
+                    <a href="/catalog" className='flex items-center justify-center gap-[10px] border-y-[1.5px] md:border-y-2 border-y-light-gray -mx-[1px] w-[234px]'>
                         <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4.60425 13.2969L20.8542 13.2969" stroke="#01040E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                             <path d="M11.1582 19.8236L4.60404 13.2976L11.1582 6.77051" stroke="#01040E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -328,7 +328,7 @@ const ProductInner = () => {
                         <path d="M0 7.99999C0 3.58171 3.58172 0 8 0L18.5 0L18.5 64H15.3683C12.6972 64 10.2024 62.6669 8.71779 60.4465L1.34951 49.4258C0.469653 48.1099 0 46.5624 0 44.9794L0 7.99999Z" fill="#FAFAFA" />
                         <path d="M8 0.5L18 0.5L18 63.5H15.3683C12.8642 63.5 10.5252 62.2503 9.13344 60.1686L1.76517 49.1479C0.940299 47.9142 0.5 46.4635 0.5 44.9794L0.5 7.99999C0.5 3.85785 3.85786 0.5 8 0.5Z" stroke="#66708D" stroke-opacity="0.3" />
                     </svg>
-                    <a href="/catalog" className='flex items-center justify-center gap-[10px] border-y md:border-y-2 border-y-light-gray -mx-[1px] grow'>
+                    <a href="/catalog" className='flex items-center justify-center gap-[10px] border-y-[1.5px] md:border-y-2 border-y-light-gray -mx-[1px] grow'>
                         <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4.7373 9.7118V16.2696C4.7373 17.1385 5.20141 17.9421 5.95351 18.3761L11.6327 21.655C12.3858 22.0899 13.313 22.0899 14.0661 21.655L19.7453 18.3761C20.4974 17.9421 20.9615 17.1385 20.9615 16.2696V9.7118C20.9615 8.84197 20.4974 8.03927 19.7453 7.60435L14.0661 4.32546C13.313 3.89151 12.3858 3.89151 11.6327 4.32546L5.95351 7.60435C5.20141 8.03927 4.7373 8.84197 4.7373 9.7118Z" stroke="#01040E" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                             <path d="M20.6252 8.46484L12.8531 12.9609L5.08203 8.46484" stroke="#01040E" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
