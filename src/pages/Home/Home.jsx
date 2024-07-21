@@ -76,7 +76,7 @@ const Home = () => {
                           </svg>
                           <div className="w-full flex items-center justify-between py-[15px]">
                             <div className="text-[16px] font-inter sm:text-[14px] font-bold text-black">Kommutatsiya quvvati</div>
-                            <div className="text-[16px] font-inter sm:text-[14px] font-bold text-dark-gray uppercase">{el.power}</div>
+                            <div className="text-[16px] font-inter sm:text-[14px] font-bold text-dark-gray uppercase">{el.power} WATT</div>
                           </div>
                           <svg className="w-full" width="336" height="1" viewBox="0 0 336 1" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <line opacity="0.3" y1="0.5" x2="336" y2="0.5" stroke="#66708D" strokeDasharray="8 8" />

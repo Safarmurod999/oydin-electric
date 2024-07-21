@@ -10,8 +10,8 @@ module.exports = {
           sm: "640px",
           md: "768px",
           lg: "1024px",
-          xl: "1280px",
-          "2xl": "1710px",
+          "2xl": "1280px",
+          "3xl": "1710px",
         },
       },
       fontFamily: {
@@ -29,6 +29,7 @@ module.exports = {
         "card-bg": "#EBEBEB",
         footer: "#11141C",
         "footer-card": "#171B24",
+        "light-gray":"rgb(206,208,217)"
       },
       width: {
         "nav-mobile": "calc(100% - 30px)",
@@ -36,8 +37,10 @@ module.exports = {
         "brand-width": "calc(50% - 8px)",
       },
       screens: {
+        mini:"400px",
         xs: "480px",
         xxs: "335px",
+        "inner":"1280px",
         "3xl": "1710px",
       },
       backgroundImage:{

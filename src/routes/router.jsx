@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { Home, Layout } from "../pages/index";
+import { Home, Layout, ProductInner } from "../pages/index";
 
 export const routesArr = [
     {
@@ -7,6 +7,11 @@ export const routesArr = [
         path: "/",
         element: Home,
     },
+    {
+        id: 1,
+        path: '/:id',
+        element: ProductInner
+    }
 ];
 const Router = () => {
     return (
@@ -18,7 +23,7 @@ const Router = () => {
                         return (
                             <Route key={index} index={!route.path && true} path={route.path}
                                 element={
-                                        <RouteComponent />
+                                    <RouteComponent />
                                 } />
                         )
                     })

@@ -121,7 +121,7 @@ const Footer = () => {
                             </ul>
                         </div>
                     </div>
-                    <div className="w-full bg-gray h-[1px] opacity-30 mt-[20px] md:mt-[40px] mb-[15px] md:mb-[30px]"></div>
+                    <div className="w-full bg-gray opacity-40 h-[1px] mt-[20px] md:mt-[40px] mb-[15px] md:mb-[30px]"></div>
                     <div className="w-full flex flex-wrap items-center justify-between relative z-10 gap-[20px]">
                         <p className='text-dark-gray text-[10px] sm:text-sm font-inter uppercase text-start max-w-[250px]'>© 2024 Oydin Electric. Barcha huquqlar himoyalangan.</p>
                         <p className='text-dark-gray text-[10px] sm:text-sm font-inter uppercase text-start lg:text-center max-w-[350px]'>Ushbu saytdagi barcha kontent mualliflik huquqi bilan himoyalangan</p>
