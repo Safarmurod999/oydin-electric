@@ -323,7 +323,7 @@ const ProductInner = () => {
                         })
                     }
                 </div>
-                <div className="w-[390px] flex items-stretch justify-center h-[64px] mb-[64px] mx-auto">
+                <div className="w-[300px] sm:w-[390px] flex items-stretch justify-center h-[64px] mb-[64px] mx-auto">
                     <svg width="17" height="64" viewBox="0 0 17 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0 7.99999C0 3.58171 3.58172 0 8 0L18.5 0L18.5 64H15.3683C12.6972 64 10.2024 62.6669 8.71779 60.4465L1.34951 49.4258C0.469653 48.1099 0 46.5624 0 44.9794L0 7.99999Z" fill="#FAFAFA" />
                         <path d="M8 0.5L18 0.5L18 63.5H15.3683C12.8642 63.5 10.5252 62.2503 9.13344 60.1686L1.76517 49.1479C0.940299 47.9142 0.5 46.4635 0.5 44.9794L0.5 7.99999C0.5 3.85785 3.85786 0.5 8 0.5Z" stroke="#66708D" stroke-opacity="0.3" />
