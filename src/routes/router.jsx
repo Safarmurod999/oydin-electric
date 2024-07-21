@@ -4,12 +4,12 @@ import { Home, Layout, ProductInner } from "../pages/index";
 export const routesArr = [
     {
         id: 0,
-        path: "/",
+        path: "/catalog",
         element: Home,
     },
     {
         id: 1,
-        path: '/:id',
+        path: '/catalog/:id',
         element: ProductInner
     }
 ];

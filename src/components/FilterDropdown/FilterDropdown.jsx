@@ -36,7 +36,7 @@ const FilterDropdown = ({ title, offset, array }) => {
                     ))
                 }
             </ul>
-            <div className={`inline-block mt-6 font-inter font-semibold text-blue border-b border-blue ${toggleDrop ? 'flex flex-col' : 'hidden'}`}
+            <div className={`flex mt-6 font-inter font-semibold text-blue border-b border-blue max-w-[150px] ${toggleDrop ? 'flex flex-col' : 'hidden'} cursor-pointer`}
                 onClick={handleOffset}>
                 {
                     (array.length > slice.length) ? `Yana ko'rsatish: ${array.length - slice.length}` : 'Yopish'

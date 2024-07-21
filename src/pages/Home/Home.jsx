@@ -20,7 +20,7 @@ const Home = () => {
               <a href="/">BOSH SAHIFA  /</a>
             </li>
             <li className="uppercase font-inter text-dark-gray transition duration-300 hover:text-blue cursor-pointer text-sm">
-              <a href="/">KATALOG</a>
+              <a href="/catalog">KATALOG</a>
             </li>
           </ul>
           {/* Title */}
@@ -68,10 +68,10 @@ const Home = () => {
                       </div>
 
                       <div className="px-[30px] pt-[70px] 3xl:pt-[50px]  pb-[40px] -mt-20 3xl:-mt-12 border-[3px] border-gray rounded-3xl">
-                        <div className="flex flex-col">
+                        <div className="flex flex-col  mb-[20px] xl:mb-[40px]">
                           <div className="w-full flex items-center justify-between py-[15px]">
-                            <div className="text-[18px] sm:text-[14px] font-bold font-dacia text-blue">{el.name}</div>
-                            <div className="text-[18px] sm:text-[14px] font-bold font-dacia text-dark-gray uppercase">{el.category}</div>
+                            <div className="text-[18px] sm:text-[14px] font-bold font-dacia text-blue">{el.name.split(" ")[0]}</div>
+                            <div className="text-[18px] sm:text-[14px] font-bold font-dacia text-dark-gray uppercase">{el.name.split(" ")[1]}</div>
                           </div>
                           <svg className="w-full" width="336" height="1" viewBox="0 0 336 1" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <line opacity="0.3" y1="0.5" x2="336" y2="0.5" stroke="#66708D" strokeDasharray="8 8" />
@@ -101,7 +101,7 @@ const Home = () => {
                               <path className="group-hover:fill-yellow" d="M0 6C0 2.68629 2.68629 0 6 0H20V54H14.2687C12.4659 54 10.7588 53.1895 9.61929 51.7925L1.35063 41.6558C0.47708 40.5849 0 39.2452 0 37.8632V6Z" fill="#0236E5" />
                             </svg>
 
-                            <button onClick={() => navigate(`/${el.id}`)} className="relative flex items-center justify-center gap-[10px] grow py-[15px] -mx-[1px] bg-blue group-hover:bg-yellow">
+                            <button onClick={() => navigate(`/catalog/${el.id}`)} className="relative flex items-center justify-center gap-[10px] grow py-[15px] -mx-[1px] bg-blue group-hover:bg-yellow">
                               <svg className="z-10" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path className="group-hover:fill-black" fillRule="evenodd" clipRule="evenodd" d="M17.0183 7.67028C17.6913 7.67728 18.6263 7.68028 19.4203 7.67728C19.8263 7.67628 20.0333 7.18528 19.7513 6.89028C19.2423 6.35628 18.5333 5.61028 17.8203 4.86228C17.1053 4.11128 16.3873 3.35628 15.8643 2.80828C15.5763 2.50428 15.0713 2.71328 15.0713 3.13328V5.70328C15.0713 6.78228 15.9503 7.67028 17.0183 7.67028Z" fill="#F8F9FF" />
                                 <path className="group-hover:fill-black" fillRule="evenodd" clipRule="evenodd" d="M14.8594 13.811H8.1314C7.7174 13.811 7.3814 13.475 7.3814 13.061C7.3814 12.647 7.7174 12.311 8.1314 12.311H14.8594C15.2734 12.311 15.6094 12.647 15.6094 13.061C15.6094 13.475 15.2734 13.811 14.8594 13.811ZM12.5904 17.232H8.1314C7.7174 17.232 7.3814 16.896 7.3814 16.482C7.3814 16.068 7.7174 15.732 8.1314 15.732H12.5904C13.0054 15.732 13.3404 16.068 13.3404 16.482C13.3404 16.896 13.0054 17.232 12.5904 17.232ZM8.1314 8.891H11.0744C11.4884 8.891 11.8244 9.227 11.8244 9.641C11.8244 10.055 11.4884 10.391 11.0744 10.391H8.1314C7.7174 10.391 7.3814 10.055 7.3814 9.641C7.3814 9.227 7.7174 8.891 8.1314 8.891ZM19.8534 9.094H16.8894C15.1234 9.085 13.6654 7.622 13.6654 5.838V2.698C13.6654 2.455 13.4724 2.25 13.2214 2.25H8.0664C5.6624 2.25 3.7124 4.229 3.7124 6.647V17.158C3.7124 19.693 5.7594 21.75 8.2694 21.75H15.9434C18.3474 21.75 20.2874 19.79 20.2874 17.372V9.533C20.2874 9.289 20.0944 9.094 19.8534 9.094Z" fill="#F8F9FF" />
