@@ -1,17 +1,17 @@
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom'
 import { Footer, Header } from '../components/index'
-import { Outlet, useLocation } from 'react-router-dom'
 
-const Layout = () => {
+const Layout = ({ children, data }) => {
     const { pathname } = useLocation();
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [pathname]);
     return (
         <>
-            <Header />
+            <Header data={data} />
             <main className='pt-[120px] sm:pt-[150px] md:pt-[170px] lg:pt-[194px] bg-[#FAFAFA]'>
-                <Outlet />
+                {children}
             </main>
             <Footer />
         </>

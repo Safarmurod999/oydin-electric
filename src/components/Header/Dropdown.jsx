@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Dropdown = ({ title }) => {
+const Dropdown = ({ title, links, navigation }) => {
     return (
         <div className="dropdown group relative flex flex-col items-start justify-center p-[16px]">
             <a className='dropdown-title flex items-center justify-center gap-[12px] transition duration-300 hover:text-blue' href="#">
@@ -10,12 +10,13 @@ const Dropdown = ({ title }) => {
                 </svg>
             </a>
             <ul className='dropdown-list static xl:absolute top-0 xl:top-[50px] left-0 xl:left-[50%] drop-shadow-none xl:drop-shadow-lg xl:-translate-x-[50%] w-auto xl:w-[200px] hidden  group-hover:flex flex-col items-start xl:items-center justify-start gap-2 mt-[15px] xl:mt-0 bg-white p-4 rounded-lg transition duration-300'>
-                <li className='dropdown-item'>
-                    <a href="/" className='font-inter uppercase transition duration-300 hover:text-blue'>B2B sotuv</a>
-                </li>
-                <li className='dropdown-item'>
-                    <a href="/" className='font-inter uppercase transition duration-300 hover:text-blue'>Kategoriyalar</a>
-                </li>
+                {
+                    links.map((link,index) => {
+                        return <li key={index} className='dropdown-item'>
+                            <a href={link.path} className='inline-block font-inter uppercase transition duration-300 hover:text-blue text-center mx-auto'>{link.name}</a>
+                        </li>
+                    })
+                }
             </ul>
         </div>
     )

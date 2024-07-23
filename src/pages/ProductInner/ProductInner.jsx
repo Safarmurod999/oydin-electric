@@ -10,6 +10,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 import { EffectFade, FreeMode, Navigation, Thumbs } from 'swiper/modules';
 import { useNavigate, useParams } from 'react-router-dom';
+import Bookmarks from '@/components/Bookmarks/Bookmarks';
 
 const ProductInner = () => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -34,10 +35,9 @@ const ProductInner = () => {
                 <div className="w-[270px] flex items-stretch justify-center h-[64px] mb-[64px]">
                     <svg width="17" height="64" viewBox="0 0 17 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0 7.99999C0 3.58171 3.58172 0 8 0L18.5 0L18.5 64H15.3683C12.6972 64 10.2024 62.6669 8.71779 60.4465L1.34951 49.4258C0.469653 48.1099 0 46.5624 0 44.9794L0 7.99999Z" fill="#FAFAFA" />
-                        <path d="M8 0.5L18 0.5L18 63.5H15.3683C12.8642 63.5 10.5252 62.2503 9.13344 60.1686L1.76517 49.1479C0.940299 47.9142 0.5 46.4635 0.5 44.9794L0.5 7.99999C0.5 3.85785 3.85786 0.5 8 0.5Z" stroke="#66708D" stroke-opacity="0.3" />
+                        <path d="M8 0.5L18 0.5L18 63.5H15.3683C12.8642 63.5 10.5252 62.2503 9.13344 60.1686L1.76517 49.1479C0.940299 47.9142 0.5 46.4635 0.5 44.9794L0.5 7.99999C0.5 3.85785 3.85786 0.5 8 0.5Z" stroke="#66708D" strokeOpacity="0.3" />
                     </svg>
-
-                    <a href="/catalog" className='flex items-center justify-center gap-[10px] border-y-[1.5px] md:border-y-2 border-y-light-gray -mx-[1px] w-[234px]'>
+                    <a href="/catalog" className='flex items-center justify-center gap-[10px] border-y-[1.5px] border-y-light-gray -mx-[1px] w-[234px]'>
                         <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4.60425 13.2969L20.8542 13.2969" stroke="#01040E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                             <path d="M11.1582 19.8236L4.60404 13.2976L11.1582 6.77051" stroke="#01040E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -67,65 +67,65 @@ const ProductInner = () => {
                                 delay: 3500,
                                 disableOnInteraction: false,
                             }}
-                            className="mySwiper2 mb-[15px] rounded-[48px] w-full h-[400px] md:h-[654px]"
+                            className="mySwiper2 mb-[15px] rounded-[20px] sm:rounded-[48px] w-full h-[300px] mini:h-[350px] sm:h-[654px]"
                         >
                             <SwiperSlide>
-                                <div className="w-full flex items-center p-6 justify-center bg-[#EBEBEB] rounded-[48px] h-full">
-                                    <img className='w-full max-w-[250px] mini:max-w-[300px] md:max-w-[405px]' src="https://swiperjs.com/demos/images/nature-1.jpg" />
+                                <div className="w-full flex items-center p-6 justify-center bg-[#EBEBEB] rounded-[20px] sm:rounded-[48px] h-full">
+                                    <img className='w-full max-w-[250px] mini:max-w-[300px] sm:max-w-[405px]' src="https://swiperjs.com/demos/images/nature-1.jpg" />
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <div className="w-full flex items-center p-6 justify-center bg-[#EBEBEB] rounded-[48px] h-full">
+                                <div className="w-full flex items-center p-6 justify-center bg-[#EBEBEB] rounded-[20px] sm:rounded-[48px] h-full">
 
-                                    <img className='w-full max-w-[250px] mini:max-w-[300px] md:max-w-[405px]' src="https://swiperjs.com/demos/images/nature-2.jpg" />
+                                    <img className='w-full max-w-[250px] mini:max-w-[300px] sm:max-w-[405px]' src="https://swiperjs.com/demos/images/nature-2.jpg" />
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <div className="w-full flex items-center p-6 justify-center bg-[#EBEBEB] rounded-[48px] h-full">
+                                <div className="w-full flex items-center p-6 justify-center bg-[#EBEBEB] rounded-[20px] sm:rounded-[48px] h-full">
 
-                                    <img className='w-full max-w-[250px] mini:max-w-[300px] md:max-w-[405px]' src="https://swiperjs.com/demos/images/nature-3.jpg" />
+                                    <img className='w-full max-w-[250px] mini:max-w-[300px] sm:max-w-[405px]' src="https://swiperjs.com/demos/images/nature-3.jpg" />
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <div className="w-full flex items-center p-6 justify-center bg-[#EBEBEB] rounded-[48px] h-full">
+                                <div className="w-full flex items-center p-6 justify-center bg-[#EBEBEB] rounded-[20px] sm:rounded-[48px] h-full">
 
-                                    <img className='w-full max-w-[250px] mini:max-w-[300px] md:max-w-[405px]' src="https://swiperjs.com/demos/images/nature-4.jpg" />
+                                    <img className='w-full max-w-[250px] mini:max-w-[300px] sm:max-w-[405px]' src="https://swiperjs.com/demos/images/nature-4.jpg" />
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <div className="w-full flex items-center p-6 justify-center bg-[#EBEBEB] rounded-[48px] h-full">
+                                <div className="w-full flex items-center p-6 justify-center bg-[#EBEBEB] rounded-[20px] sm:rounded-[48px] h-full">
 
-                                    <img className='w-full max-w-[250px] mini:max-w-[300px] md:max-w-[405px]' src="https://swiperjs.com/demos/images/nature-5.jpg" />
+                                    <img className='w-full max-w-[250px] mini:max-w-[300px] sm:max-w-[405px]' src="https://swiperjs.com/demos/images/nature-5.jpg" />
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <div className="w-full flex items-center p-6 justify-center bg-[#EBEBEB] rounded-[48px] h-full">
+                                <div className="w-full flex items-center p-6 justify-center bg-[#EBEBEB] rounded-[20px] sm:rounded-[48px] h-full">
 
-                                    <img className='w-full max-w-[250px] mini:max-w-[300px] md:max-w-[405px]' src="https://swiperjs.com/demos/images/nature-6.jpg" />
+                                    <img className='w-full max-w-[250px] mini:max-w-[300px] sm:max-w-[405px]' src="https://swiperjs.com/demos/images/nature-6.jpg" />
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <div className="w-full flex items-center p-6 justify-center bg-[#EBEBEB] rounded-[48px] h-full">
+                                <div className="w-full flex items-center p-6 justify-center bg-[#EBEBEB] rounded-[20px] sm:rounded-[48px] h-full">
 
-                                    <img className='w-full max-w-[250px] mini:max-w-[300px] md:max-w-[405px]' src="https://swiperjs.com/demos/images/nature-7.jpg" />
+                                    <img className='w-full max-w-[250px] mini:max-w-[300px] sm:max-w-[405px]' src="https://swiperjs.com/demos/images/nature-7.jpg" />
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <div className="w-full flex items-center p-6 justify-center bg-[#EBEBEB] rounded-[48px] h-full">
+                                <div className="w-full flex items-center p-6 justify-center bg-[#EBEBEB] rounded-[20px] sm:rounded-[48px] h-full">
 
-                                    <img className='w-full max-w-[250px] mini:max-w-[300px] md:max-w-[405px]' src="https://swiperjs.com/demos/images/nature-8.jpg" />
+                                    <img className='w-full max-w-[250px] mini:max-w-[300px] sm:max-w-[405px]' src="https://swiperjs.com/demos/images/nature-8.jpg" />
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <div className="w-full flex items-center p-6 justify-center bg-[#EBEBEB] rounded-[48px] h-full">
+                                <div className="w-full flex items-center p-6 justify-center bg-[#EBEBEB] rounded-[20px] sm:rounded-[48px] h-full">
 
-                                    <img className='w-full max-w-[250px] mini:max-w-[300px] md:max-w-[405px]' src="https://swiperjs.com/demos/images/nature-9.jpg" />
+                                    <img className='w-full max-w-[250px] mini:max-w-[300px] sm:max-w-[405px]' src="https://swiperjs.com/demos/images/nature-9.jpg" />
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <div className="w-full flex items-center p-6 justify-center bg-[#EBEBEB] rounded-[48px] h-full">
+                                <div className="w-full flex items-center p-6 justify-center bg-[#EBEBEB] rounded-[20px] sm:rounded-[48px] h-full">
 
-                                    <img className='w-full max-w-[250px] mini:max-w-[300px] md:max-w-[405px]' src="https://swiperjs.com/demos/images/nature-10.jpg" />
+                                    <img className='w-full max-w-[250px] mini:max-w-[300px] sm:max-w-[405px]' src="https://swiperjs.com/demos/images/nature-10.jpg" />
                                 </div>
                             </SwiperSlide>
                         </Swiper>
@@ -138,54 +138,54 @@ const ProductInner = () => {
                             modules={[FreeMode, Navigation, Thumbs]}
                             className="mySwiper"
                         >
-                            <SwiperSlide className='size-[152px] rounded-[32px]'>
-                                <div className="rounded-[32px] flex items-center justify-center bg-[#EBEBEB] h-[152px]">
-                                    <img className='w-full max-w-[96px]' src="https://swiperjs.com/demos/images/nature-1.jpg" />
+                            <SwiperSlide className='size-[100px] sm:size-[152px] rounded-[10px] sm:rounded-[32px]'>
+                                <div className="rounded-[10px] sm:rounded-[32px] flex items-center justify-center bg-[#EBEBEB] h-[100px] sm:h-[152px]">
+                                    <img className='w-full max-w-[66px] sm:max-w-[96px]' src="https://swiperjs.com/demos/images/nature-1.jpg" />
                                 </div>
                             </SwiperSlide>
-                            <SwiperSlide className='size-[152px] rounded-[32px]'>
-                                <div className="rounded-[32px] flex items-center justify-center bg-[#EBEBEB] h-[152px]">
-                                    <img className='w-full max-w-[96px]' src="https://swiperjs.com/demos/images/nature-2.jpg" />
+                            <SwiperSlide className='size-[100px] sm:size-[152px] rounded-[10px] sm:rounded-[32px]'>
+                                <div className="rounded-[10px] sm:rounded-[32px] flex items-center justify-center bg-[#EBEBEB] h-[100px] sm:h-[152px]">
+                                    <img className='w-full max-w-[66px] sm:max-w-[96px]' src="https://swiperjs.com/demos/images/nature-2.jpg" />
                                 </div>
                             </SwiperSlide>
-                            <SwiperSlide className='size-[152px] rounded-[32px]'>
-                                <div className="rounded-[32px] flex items-center justify-center bg-[#EBEBEB] h-[152px]">
-                                    <img className='w-full max-w-[96px]' src="https://swiperjs.com/demos/images/nature-3.jpg" />
+                            <SwiperSlide className='size-[100px] sm:size-[152px] rounded-[10px] sm:rounded-[32px]'>
+                                <div className="rounded-[10px] sm:rounded-[32px] flex items-center justify-center bg-[#EBEBEB] h-[100px] sm:h-[152px]">
+                                    <img className='w-full max-w-[66px] sm:max-w-[96px]' src="https://swiperjs.com/demos/images/nature-3.jpg" />
                                 </div>
                             </SwiperSlide>
-                            <SwiperSlide className='size-[152px] rounded-[32px]'>
-                                <div className="rounded-[32px] flex items-center justify-center bg-[#EBEBEB] h-[152px]">
-                                    <img className='w-full max-w-[96px]' src="https://swiperjs.com/demos/images/nature-4.jpg" />
+                            <SwiperSlide className='size-[100px] sm:size-[152px] rounded-[10px] sm:rounded-[32px]'>
+                                <div className="rounded-[10px] sm:rounded-[32px] flex items-center justify-center bg-[#EBEBEB] h-[100px] sm:h-[152px]">
+                                    <img className='w-full max-w-[66px] sm:max-w-[96px]' src="https://swiperjs.com/demos/images/nature-4.jpg" />
                                 </div>
                             </SwiperSlide>
-                            <SwiperSlide className='size-[152px] rounded-[32px]'>
-                                <div className="rounded-[32px] flex items-center justify-center bg-[#EBEBEB] h-[152px]">
-                                    <img className='w-full max-w-[96px]' src="https://swiperjs.com/demos/images/nature-5.jpg" />
+                            <SwiperSlide className='size-[100px] sm:size-[152px] rounded-[10px] sm:rounded-[32px]'>
+                                <div className="rounded-[10px] sm:rounded-[32px] flex items-center justify-center bg-[#EBEBEB] h-[100px] sm:h-[152px]">
+                                    <img className='w-full max-w-[66px] sm:max-w-[96px]' src="https://swiperjs.com/demos/images/nature-5.jpg" />
                                 </div>
                             </SwiperSlide>
-                            <SwiperSlide className='size-[152px] rounded-[32px]'>
-                                <div className="rounded-[32px] flex items-center justify-center bg-[#EBEBEB] h-[152px]">
-                                    <img className='w-full max-w-[96px]' src="https://swiperjs.com/demos/images/nature-6.jpg" />
+                            <SwiperSlide className='size-[100px] sm:size-[152px] rounded-[10px] sm:rounded-[32px]'>
+                                <div className="rounded-[10px] sm:rounded-[32px] flex items-center justify-center bg-[#EBEBEB] h-[100px] sm:h-[152px]">
+                                    <img className='w-full max-w-[66px] sm:max-w-[96px]' src="https://swiperjs.com/demos/images/nature-6.jpg" />
                                 </div>
                             </SwiperSlide>
-                            <SwiperSlide className='size-[152px] rounded-[32px]'>
-                                <div className="rounded-[32px] flex items-center justify-center bg-[#EBEBEB] h-[152px]">
-                                    <img className='w-full max-w-[96px]' src="https://swiperjs.com/demos/images/nature-7.jpg" />
+                            <SwiperSlide className='size-[100px] sm:size-[152px] rounded-[10px] sm:rounded-[32px]'>
+                                <div className="rounded-[10px] sm:rounded-[32px] flex items-center justify-center bg-[#EBEBEB] h-[100px] sm:h-[152px]">
+                                    <img className='w-full max-w-[66px] sm:max-w-[96px]' src="https://swiperjs.com/demos/images/nature-7.jpg" />
                                 </div>
                             </SwiperSlide>
-                            <SwiperSlide className='size-[152px] rounded-[32px]'>
-                                <div className="rounded-[32px] flex items-center justify-center bg-[#EBEBEB] h-[152px]">
-                                    <img className='w-full max-w-[96px]' src="https://swiperjs.com/demos/images/nature-8.jpg" />
+                            <SwiperSlide className='size-[100px] sm:size-[152px] rounded-[10px] sm:rounded-[32px]'>
+                                <div className="rounded-[10px] sm:rounded-[32px] flex items-center justify-center bg-[#EBEBEB] h-[100px] sm:h-[152px]">
+                                    <img className='w-full max-w-[66px] sm:max-w-[96px]' src="https://swiperjs.com/demos/images/nature-8.jpg" />
                                 </div>
                             </SwiperSlide>
-                            <SwiperSlide className='size-[152px] rounded-[32px]'>
-                                <div className="rounded-[32px] flex items-center justify-center bg-[#EBEBEB] h-[152px]">
-                                    <img className='w-full max-w-[96px]' src="https://swiperjs.com/demos/images/nature-9.jpg" />
+                            <SwiperSlide className='size-[100px] sm:size-[152px] rounded-[10px] sm:rounded-[32px]'>
+                                <div className="rounded-[10px] sm:rounded-[32px] flex items-center justify-center bg-[#EBEBEB] h-[100px] sm:h-[152px]">
+                                    <img className='w-full max-w-[66px] sm:max-w-[96px]' src="https://swiperjs.com/demos/images/nature-9.jpg" />
                                 </div>
                             </SwiperSlide>
-                            <SwiperSlide className='size-[152px] rounded-[32px]'>
-                                <div className="rounded-[32px] flex items-center justify-center bg-[#EBEBEB] h-[152px]">
-                                    <img className='w-full max-w-[96px]' src="https://swiperjs.com/demos/images/nature-10.jpg" />
+                            <SwiperSlide className='size-[100px] sm:size-[152px] rounded-[10px] sm:rounded-[32px]'>
+                                <div className="rounded-[10px] sm:rounded-[32px] flex items-center justify-center bg-[#EBEBEB] h-[100px] sm:h-[152px]">
+                                    <img className='w-full max-w-[66px] sm:max-w-[96px]' src="https://swiperjs.com/demos/images/nature-10.jpg" />
                                 </div>
                             </SwiperSlide>
                         </Swiper>
@@ -326,9 +326,9 @@ const ProductInner = () => {
                 <div className="w-[300px] sm:w-[390px] flex items-stretch justify-center h-[64px] mb-[64px] mx-auto">
                     <svg width="17" height="64" viewBox="0 0 17 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0 7.99999C0 3.58171 3.58172 0 8 0L18.5 0L18.5 64H15.3683C12.6972 64 10.2024 62.6669 8.71779 60.4465L1.34951 49.4258C0.469653 48.1099 0 46.5624 0 44.9794L0 7.99999Z" fill="#FAFAFA" />
-                        <path d="M8 0.5L18 0.5L18 63.5H15.3683C12.8642 63.5 10.5252 62.2503 9.13344 60.1686L1.76517 49.1479C0.940299 47.9142 0.5 46.4635 0.5 44.9794L0.5 7.99999C0.5 3.85785 3.85786 0.5 8 0.5Z" stroke="#66708D" stroke-opacity="0.3" />
+                        <path d="M8 0.5L18 0.5L18 63.5H15.3683C12.8642 63.5 10.5252 62.2503 9.13344 60.1686L1.76517 49.1479C0.940299 47.9142 0.5 46.4635 0.5 44.9794L0.5 7.99999C0.5 3.85785 3.85786 0.5 8 0.5Z" stroke="#66708D" strokeOpacity="0.3" />
                     </svg>
-                    <a href="/catalog" className='flex items-center justify-center gap-[10px] border-y-[1.5px] md:border-y-2 border-y-light-gray -mx-[1px] grow'>
+                    <a href="/catalog" className='flex items-center justify-center gap-[10px] border-y-[1.5px] border-y-light-gray -mx-[1px] grow'>
                         <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4.7373 9.7118V16.2696C4.7373 17.1385 5.20141 17.9421 5.95351 18.3761L11.6327 21.655C12.3858 22.0899 13.313 22.0899 14.0661 21.655L19.7453 18.3761C20.4974 17.9421 20.9615 17.1385 20.9615 16.2696V9.7118C20.9615 8.84197 20.4974 8.03927 19.7453 7.60435L14.0661 4.32546C13.313 3.89151 12.3858 3.89151 11.6327 4.32546L5.95351 7.60435C5.20141 8.03927 4.7373 8.84197 4.7373 9.7118Z" stroke="#01040E" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                             <path d="M20.6252 8.46484L12.8531 12.9609L5.08203 8.46484" stroke="#01040E" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
@@ -344,6 +344,8 @@ const ProductInner = () => {
                     </svg>
                 </div>
             </Container>
+
+            <Bookmarks />
         </section>
     )
 }

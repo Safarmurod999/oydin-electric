@@ -261,3 +261,6 @@ export const productsArray = [
     brand:"OYDIN ELECTRIC"
   },
 ];
+
+
+export const BASE_URL = 'https://oydin.itlink.uz/api/v1'

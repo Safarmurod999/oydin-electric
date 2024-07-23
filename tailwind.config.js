@@ -29,7 +29,8 @@ module.exports = {
         "card-bg": "#EBEBEB",
         footer: "#11141C",
         "footer-card": "#171B24",
-        "light-gray":"rgb(206,208,217)"
+        "light-gray":"rgb(206,208,217)",
+        blur:'rgba(85, 84, 94, 0.3)'
       },
       width: {
         "nav-mobile": "calc(100% - 30px)",
