@@ -49,7 +49,7 @@ const FilterDropdown = ({ title, offset, array, handleFunction, type }) => {
                                 onChange={() => handleFunction(item.id)}
                                 checked={handleCheck(item.id)}
                             />
-                            <label htmlFor={`checkbox-${item.id + item.name}`} className='font-inter font-semibold text-black  cursor-pointer'>
+                            <label htmlFor={`checkbox-${item.id + item.name}`} className='font-inter font-semibold text-black first-letter:uppercase cursor-pointer'>
                                 {item.name}
                             </label>
                         </li>

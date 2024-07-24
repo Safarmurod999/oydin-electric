@@ -38,9 +38,10 @@ module.exports = {
         "brand-width": "calc(50% - 8px)",
       },
       screens: {
+        xxs: "335px",
         mini:"400px",
         xs: "480px",
-        xxs: "335px",
+        slider:"540px",
         "inner":"1280px",
         "3xl": "1710px",
       },

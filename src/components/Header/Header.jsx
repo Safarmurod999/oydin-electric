@@ -5,7 +5,7 @@ import Dropdown from './Dropdown'
 import Container from '../Container/Container';
 
 
-const Header = ({ data }) => {
+const Header = () => {
     const [openNavbar, setOpenNavbar] = useState(false);
     const catalog = [{
         id: 0,
@@ -40,21 +40,21 @@ const Header = ({ data }) => {
                          w-nav-mobile sm:w-[320px] xl:w-auto rounded-xl bg-gray xl:bg-transparent transition duration-300
                          drop-shadow-xl xl:drop-shadow-none
                          ${openNavbar ? 'translate-x-[15px]' : '-translate-x-[100%]'}`}>
-                        <div className="navbar-main ">
-                            <ul className="navbar-menu flex flex-col xl:flex-row items-start xl:items-center justify-center">
-                                <li className="navbar-item text-dark-gray font-bold">
+                        <div className="navbar-main w-full xl:w-auto">
+                            <ul className="navbar-menu w-full xl:w-auto flex flex-col xl:flex-row items-start xl:items-center justify-center">
+                                <li className="w-full navbar-item text-dark-gray font-bold whitespace-nowrap">
                                     <Dropdown title={'Katalog'} links={catalog} navigation={'catalog'} />
                                 </li>
-                                <li className="navbar-item text-dark-gray font-bold p-[16px]">
+                                <li className="w-full navbar-item text-dark-gray font-bold whitespace-nowrap p-[16px]">
                                     <a href="https://oydin-electric.framer.website/b2b" className="navbar-link font-inter uppercase transition duration-300 hover:text-blue">B2B sotuv</a>
                                 </li>
-                                <li className="navbar-item text-dark-gray font-bold p-[16px]">
+                                <li className="w-full navbar-item text-dark-gray font-bold whitespace-nowrap p-[16px]">
                                     <a href="https://oydin-electric.framer.website/news" className="navbar-link font-inter uppercase transition duration-300 hover:text-blue">Yangiliklar</a>
                                 </li>
-                                <li className="navbar-item text-dark-gray font-bold">
+                                <li className="w-full navbar-item text-dark-gray font-bold whitespace-nowrap">
                                     <Dropdown title={'Brendlar'} links={brands} navigation={'brand'} />
                                 </li>
-                                <li className="navbar-item text-dark-gray font-bold p-[16px]">
+                                <li className="w-full navbar-item text-dark-gray font-bold whitespace-nowrap p-[16px]">
                                     <a href="https://oydin-electric.framer.website/about-us" className="navbar-link font-inter uppercase transition duration-300 hover:text-blue">Kompaniya haqida</a>
                                 </li>
                             </ul>

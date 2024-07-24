@@ -6,7 +6,8 @@ const initialState = {
   loading: false,
   name: '',
   phone_number: '',
-  status: '',
+  email: '',
+  status: "Siz bilan qanday bog'lanamiz?",
   cart: JSON.parse(localStorage.getItem("cartItems")) || [],
   bookmarks: JSON.parse(localStorage.getItem("bookMarks")) || [],
   bookmarksLength: JSON.parse(localStorage.getItem("bookMarks"))?.length || 0,
@@ -58,6 +59,21 @@ const cartSlice = createSlice({
         }
       }
     },
+    addItem: (initialState, { payload }) => {
+      if (initialState.cart.find(el => el.id == payload.id)) {
+        localStorage.setItem("cartItems", JSON.stringify(initialState.cart))
+        return {
+          ...initialState,
+          cart: initialState.cart
+        }
+      } else {
+        localStorage.setItem("cartItems", JSON.stringify([...initialState.cart, payload]));
+        return {
+          ...initialState,
+          cart: [...initialState.cart, payload]
+        }
+      }
+    },
     removeBookmark: (initialState, action) => {
       const itemId = action.payload;
       const tempCart = initialState.bookmarks.filter((bookmark) => bookmark.id !== itemId);
@@ -80,7 +96,8 @@ const cartSlice = createSlice({
     setCart: (initialState) => {
       return {
         ...initialState,
-        cart: JSON.parse(localStorage.getItem("cartItems")) || [],
+        isModalOpen: true,
+        cart: JSON.parse(localStorage.getItem("bookMarks")) || [],
       }
     },
     setBookmarks: (initialState) => {
@@ -100,6 +117,12 @@ const cartSlice = createSlice({
       return {
         ...initialState,
         phone_number: payload
+      }
+    },
+    setEmail: (initialState, { payload }) => {
+      return {
+        ...initialState,
+        email: payload
       }
     },
     setStatus: (initialState, { payload }) => {
@@ -149,12 +172,14 @@ const cartSlice = createSlice({
 export const {
   clearCart,
   addBookmark,
+  addItem,
   removeItem,
   removeBookmark,
   setCart,
   setBookmarks,
   setName,
   setPhoneNumber,
+  setEmail,
   setStatus,
   getLength,
   setIsModalOpen,

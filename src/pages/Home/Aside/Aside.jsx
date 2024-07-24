@@ -3,7 +3,7 @@ import FilterDropdown from '@/components/FilterDropdown/FilterDropdown'
 import { productArray } from "@/const/data.js"
 import { companyArray } from '@/const/data'
 import { useSearchParams } from 'react-router-dom'
-const Aside = ({ openAside, setOpenAside, category, brand, search, setBrand, setCategory, setSearch }) => {
+const Aside = ({ openAside, setOpenAside, category, brand, search, setBrand, setCategory, setSearch, categories, brands }) => {
     const [searchParams, setSearchParams] = useSearchParams();
 
     const [params, setParams] = useState(Object.fromEntries(searchParams.entries()))
@@ -75,8 +75,8 @@ const Aside = ({ openAside, setOpenAside, category, brand, search, setBrand, set
                     <rect x="0.121338" y="17" width="24" height="3" rx="1" transform="rotate(-45 0.121338 17)" fill="#231F20" />
                 </svg>
             </button>
-            <FilterDropdown array={productArray} title={'Mahsulot Turi'} offset={4} handleFunction={handleCategory} type="category" />
-            <FilterDropdown array={companyArray} title={'Kompaniyalar'} offset={6} handleFunction={handleBrand} type="brand" />
+            <FilterDropdown array={categories} title={'Mahsulot Turi'} offset={4} handleFunction={handleCategory} type="category" />
+            <FilterDropdown array={brands} title={'Kompaniyalar'} offset={6} handleFunction={handleBrand} type="brand" />
         </aside>
     )
 }
