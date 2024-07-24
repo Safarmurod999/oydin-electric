@@ -1,8 +1,12 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import corner from "@/assets/images/corner.png"
-const ProductCard = ({el}) => {
+import { useDispatch, useSelector } from 'react-redux';
+import { addBookmark } from '../../../store/cartSlice';
+const ProductCard = ({ el }) => {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const { bookmarks } = useSelector(state => state.cart)
     return (
         <div key={el.id} className="flex flex-col relative w-full">
             <div className="w-full relative flex items-center justify-center pt-[55px] 3xl:pt-[75px] px-[60px] 3xl:px-[80px] pb-[45px] z-10">
@@ -56,9 +60,10 @@ const ProductCard = ({el}) => {
                         </svg>
 
                     </div>
-                    <button className="flex items-center justify-center bg-yellow size-[54px] rounded-xl">
+                    <button
+                        onClick={() => dispatch(addBookmark(el))} className={`flex items-center justify-center size-[54px] rounded-xl ${bookmarks.find(item => item.id == el.id) ? 'bg-black' : 'bg-yellow'}`}>
                         <svg className="size-[28px]" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M23.1537 11.4539C23.143 8.72293 21.7103 6.15468 18.8855 5.24471C16.9459 4.61878 14.8331 4.96686 13.1923 7.32261C11.5515 4.96686 9.43861 4.61878 7.49899 5.24471C4.67395 6.15478 3.24118 8.72352 3.23081 11.4548C3.20468 16.8864 8.70862 21.0429 13.1909 23.0295L13.1923 23.0289L13.1937 23.0295C17.6761 21.0428 23.1805 16.886 23.1537 11.4539Z" fill="#231C04" />
+                            <path d="M23.1537 11.4539C23.143 8.72293 21.7103 6.15468 18.8855 5.24471C16.9459 4.61878 14.8331 4.96686 13.1923 7.32261C11.5515 4.96686 9.43861 4.61878 7.49899 5.24471C4.67395 6.15478 3.24118 8.72352 3.23081 11.4548C3.20468 16.8864 8.70862 21.0429 13.1909 23.0295L13.1923 23.0289L13.1937 23.0295C17.6761 21.0428 23.1805 16.886 23.1537 11.4539Z" fill={`${bookmarks.find(item => item.id == el.id) ? 'white' : '#231C04'}`} />
                         </svg>
                     </button>
                 </div>

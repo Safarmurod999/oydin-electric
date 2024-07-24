@@ -1,11 +1,11 @@
-import bookmarked from "@/assets/images/bookmarked.png"
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom"
 import { setBookmarkOpen } from "@/store/cartSlice"
+import { removeBookmark } from "../../store/cartSlice";
 const Bookmarks = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const { isBookMarkOpen, bookmarksLength } = useSelector((store) => store.cart)
+    const { isBookMarkOpen, bookmarksLength, bookmarks } = useSelector((store) => store.cart)
     return (
         <>
             <div className={`fixed top-0 left-0 z-50 w-full h-dvh bg-blur backdrop-blur transition duration-300 ${isBookMarkOpen ? 'flex' : 'hidden'}`}>
@@ -18,17 +18,27 @@ const Bookmarks = () => {
                     </button>
                     <div className="text-black  font-bold font-dacia text-[28px] mb-[30px]">Saqlanganlari</div>
                     <div className="bg-[#E4E9F0] w-full h-[2px] max-w-[490px] mb-[30px]"></div>
-                    <ul className="w-full max-w-[490px] overflow-y-auto">
-                        <li className="flex items-center justify-start gap-[20px]">
-                            <div className="min-w-[80px] size-[80px] sm:size-[120px] flex items-center justify-center bg-[#EBEBEB] p-[12px] rounded-xl"><img src={bookmarked} alt="product-image" className="h-full" /></div>
-                            <div className="text-[16px] sm:text-[22px] font-semibold font-inter text-black">Avtomatik kalit El 47-63</div>
-                            <button className='flex border border-light-gray rounded-full p-[11px] ms-auto'>
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5 5L15 15" stroke="#01040E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                    <path d="M15 5L5 15" stroke="#01040E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
-                            </button>
-                        </li>
+                    <ul className="w-full max-w-[490px] overflow-y-auto space-y-4">
+                        {
+                            bookmarks.map(el => {
+                                return <li key={el.id} className="flex items-center justify-start gap-[20px]">
+                                    <div onClick={() => {
+                                        navigate(`/catalog/${el.id}`);
+                                        dispatch(setBookmarkOpen(false))
+                                    }} className="min-w-[80px] size-[80px] sm:size-[120px] flex items-center justify-center bg-[#EBEBEB] p-[12px] rounded-xl">
+                                        {el.image ? <img src={el.image} alt="product-image" className="h-full" /> : <p className="text-black">No Image</p>}
+                                    </div>
+                                    <div className="text-[16px] sm:text-[22px] font-semibold font-inter text-black">{el.name}</div>
+                                    <button onClick={() => dispatch(removeBookmark(el.id))} className='flex border border-light-gray rounded-full p-[11px] ms-auto'>
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5 5L15 15" stroke="#01040E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                            <path d="M15 5L5 15" stroke="#01040E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                    </button>
+                                </li>
+                            })
+                        }
+                        {bookmarks.length === 0 && <p className="text-[22px] text-black">Saqlangan mahsulotlar mavjud emas</p>}
                     </ul>
                     <div className="group flex items-stretch justify-between grow  max-w-[490px] mt-[60px]">
                         <svg className="bottom-0 left-0" width="20" height="54" viewBox="0 0 20 54" fill="none" xmlns="http://www.w3.org/2000/svg">

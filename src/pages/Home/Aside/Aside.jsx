@@ -3,19 +3,19 @@ import FilterDropdown from '@/components/FilterDropdown/FilterDropdown'
 import { productArray } from "@/const/data.js"
 import { companyArray } from '@/const/data'
 import { useSearchParams } from 'react-router-dom'
-const Aside = ({ openAside, setOpenAside, category, brand, setBrand, setCategory }) => {
+const Aside = ({ openAside, setOpenAside, category, brand, search, setBrand, setCategory, setSearch }) => {
     const [searchParams, setSearchParams] = useSearchParams();
 
     const [params, setParams] = useState(Object.fromEntries(searchParams.entries()))
 
-
     const handleCategory = (newCategory) => {
         let categoryArray = searchParams.getAll('category')
         if (!categoryArray.includes(`${newCategory}`)) {
-
             if (searchParams.getAll('brand').length) {
                 params.brand = brand
-
+            }
+            if (searchParams.get('q') && searchParams.get('q').length > 0) {
+                params.q = search
             }
             categoryArray.push(newCategory)
             setCategory(categoryArray);
@@ -25,7 +25,9 @@ const Aside = ({ openAside, setOpenAside, category, brand, setBrand, setCategory
         } else {
             if (searchParams.getAll('brand').length) {
                 params.brand = brand
-
+            }
+            if (searchParams.get('q') && searchParams.get('q').length > 0) {
+                params.q = search
             }
             categoryArray = categoryArray.filter((item) => item != newCategory);
             setCategory(categoryArray);
@@ -33,14 +35,16 @@ const Aside = ({ openAside, setOpenAside, category, brand, setBrand, setCategory
             setParams(params);
             setSearchParams(params);
         }
+
     }
     const handleBrand = (newBrand) => {
         let brandArray = searchParams.getAll('brand')
         if (!brandArray.includes(`${newBrand}`)) {
-
             if (searchParams.getAll('category').length) {
                 params.category = category
-
+            }
+            if (searchParams.get('q') && searchParams.get('q').length > 0) {
+                params.q = search
             }
             brandArray.push(newBrand)
             setBrand(brandArray);
@@ -50,7 +54,9 @@ const Aside = ({ openAside, setOpenAside, category, brand, setBrand, setCategory
         } else {
             if (searchParams.getAll('category').length) {
                 params.category = category
-
+            }
+            if (searchParams.get('q') && searchParams.get('q').length > 0) {
+                params.q = search
             }
             brandArray = brandArray.filter((item) => item != newBrand);
             setBrand(brandArray);

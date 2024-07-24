@@ -43,7 +43,7 @@ const Header = ({ data }) => {
                         <div className="navbar-main ">
                             <ul className="navbar-menu flex flex-col xl:flex-row items-start xl:items-center justify-center">
                                 <li className="navbar-item text-dark-gray font-bold">
-                                    <Dropdown title={'Katalog'} links={catalog} navigation={'category'} />
+                                    <Dropdown title={'Katalog'} links={catalog} navigation={'catalog'} />
                                 </li>
                                 <li className="navbar-item text-dark-gray font-bold p-[16px]">
                                     <a href="https://oydin-electric.framer.website/b2b" className="navbar-link font-inter uppercase transition duration-300 hover:text-blue">B2B sotuv</a>

@@ -41,6 +41,23 @@ const cartSlice = createSlice({
       initialState.bookmarksLength = 0;
       localStorage.removeItem("cartItems");
     },
+    addBookmark: (initialState, { payload }) => {
+      if (initialState.bookmarks.find(el => el.id == payload.id)) {
+        localStorage.setItem("bookMarks", JSON.stringify(initialState.bookmarks.filter(bookmark => bookmark.id != payload.id)));
+        return {
+          ...initialState,
+          bookmarks: initialState.bookmarks.filter(bookmark => bookmark.id != payload.id),
+          bookmarksLength: initialState.bookmarks.filter(bookmark => bookmark.id != payload.id).length
+        }
+      } else {
+        localStorage.setItem("bookMarks", JSON.stringify([...initialState.bookmarks, payload]));
+        return {
+          ...initialState,
+          bookmarks: [...initialState.bookmarks, payload],
+          bookmarksLength: initialState.bookmarks.length + 1
+        }
+      }
+    },
     removeBookmark: (initialState, action) => {
       const itemId = action.payload;
       const tempCart = initialState.bookmarks.filter((bookmark) => bookmark.id !== itemId);
@@ -131,6 +148,7 @@ const cartSlice = createSlice({
 
 export const {
   clearCart,
+  addBookmark,
   removeItem,
   removeBookmark,
   setCart,

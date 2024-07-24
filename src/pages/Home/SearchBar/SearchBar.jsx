@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
+import { useDebouncedCallback } from 'use-debounce';
 
-const SearchBar = () => {
+const SearchBar = ({ search, setSearch, params, brand, category, setParams, setSearchParams, searchParams }) => {
     const [openSelect, setOpenSelect] = useState(false);
     const [filter, setFilter] = useState('So’ngi tovarlar');
     const [layout, setLayout] = useState('grid');
@@ -8,12 +9,43 @@ const SearchBar = () => {
         setFilter(filter)
         setOpenSelect(false)
     }
+    const handleSearch = useDebouncedCallback((search) => {
+        if (search.length > 0) {
+            if (searchParams.getAll('brand').length) {
+                params.brand = brand
+            }
+            if (searchParams.getAll('category').length) {
+                params.category = category
+            }
+            setSearch(search);
+            params.q = search;
+            setParams(params);
+            setSearchParams(params);
+        } else {
+            if (searchParams.getAll('brand').length) {
+                params.brand = brand
+            }
+            if (searchParams.getAll('category').length) {
+                params.category = category
+            }
+            setSearch('');
+            delete params.q;
+            searchParams.delete('q');
+            setParams(params);
+            setSearchParams(params);
+        }
+    }, 2000)
     return (
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
 
             {/* Search Input */}
             <div className="flex items-center justify-center relative w-full md:w-[400px] lg:w-[600px] xl:w-[700px] 3xl:w-[995px]">
-                <input type="text" placeholder="Barcha 15 000ta mahsulotni izlang..." className="w-full px-[20px] py-4 rounded-lg border-[2px] text-dark-gray border-blue" required />
+                <input type="text"
+                    placeholder="Barcha 15 000ta mahsulotni izlang..."
+                    className="w-full px-[20px] py-4 rounded-lg border-[2px] text-dark-gray border-blue"
+                    onChange={(e) => handleSearch(e.target.value)}
+                    defaultValue={search}
+                    required />
                 <div className="absolute top-[50%] -translate-y-[50%] right-0 bg-blue w-[72px] h-full flex items-center justify-center rounded-e-lg cursor-pointer">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M17.3613 17.584L20.7863 21.0002M11.6324 3C16.2814 3 20.0499 6.76847 20.0499 11.4175C20.0499 16.0666 16.2814 19.836 11.6324 19.836C6.98331 19.836 3.21484 16.0666 3.21484 11.4175C3.21484 6.76847 6.98331 3 11.6324 3Z" stroke="#F8F9FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

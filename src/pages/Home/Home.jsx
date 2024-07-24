@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-import { Container, Pagination, Bookmarks } from "@/components/index"
+import { Container, Pagination, Bookmarks, ShoppingCart } from "@/components/index"
 import { brandArray } from "@/const/data"
 import { productsArray } from "@/const/data"
 
@@ -10,25 +10,29 @@ import ProductCard from "./ProductCard/ProductCard"
 import { useNavigate, useSearchParams } from "react-router-dom"
 
 const Home = ({ data }) => {
-  const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
 
   const [params, setParams] = useState(Object.fromEntries(searchParams.entries()))
 
   const [category, setCategory] = useState(searchParams.getAll('category') || '');
   const [brand, setBrand] = useState(searchParams.getAll('brand') || '');
+  const [search, setSearch] = useState(searchParams.get('q') || '');
 
   const [openAside, setOpenAside] = useState(false);
 
   const handleBrand = (brand) => {
     setCategory('');
+    setSearch('');
     setBrand([brand]);
     setParams({});
     setSearchParams({})
+    searchParams.delete('category');
+    searchParams.delete('q');
+    delete params.category;
+    delete params.q;
     params.brand = brand;
     setParams(params);
     setSearchParams(params);
-    // navigate(`/catalog?brand=${brand}`);
   }
   return (
     <>
@@ -66,10 +70,28 @@ const Home = ({ data }) => {
           </ul>
 
           {/* SearchBar */}
-          <SearchBar />
+          <SearchBar
+            search={search}
+            setSearch={setSearch}
+            params={params}
+            setParams={setParams}
+            searchParams={searchParams}
+            setSearchParams={setSearchParams}
+            brand={brand}
+            category={category}
+          />
 
           <div className="flex items-start justify-between gap-[32px] mt-[30px] md:mt-[45px] lg:mt-[70px]">
-            <Aside openAside={openAside} setOpenAside={setOpenAside} brand={brand} setBrand={setBrand} category={category} setCategory={setCategory} />
+            <Aside
+              openAside={openAside}
+              setOpenAside={setOpenAside}
+              brand={brand}
+              setBrand={setBrand}
+              category={category}
+              setCategory={setCategory}
+              search={search}
+              setSearch={setSearch}
+            />
             <div className="grow">
               <div className="flex items-center justify-center w-full gap-[10px] border-2 border-[#ebebeb] rounded-lg py-2 xl:hidden mb-8 text-[20px]" onClick={() => setOpenAside(!openAside)}>
                 <svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -95,6 +117,7 @@ const Home = ({ data }) => {
           </div>
         </Container>
         <Bookmarks />
+        <ShoppingCart />
       </section>
     </>
   )
