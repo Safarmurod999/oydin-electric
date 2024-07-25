@@ -26,7 +26,7 @@ const ProductInner = () => {
     const { bookmarks } = useSelector(store => store.cart);
 
     const urls = [
-        `/product-detail/${13}`,
+        `/product-detail/${id}`,
         '/product-list',
         '/categories',
         '/brands',
@@ -41,11 +41,11 @@ const ProductInner = () => {
         console.log(error);
     }
 
-    const brand = product[3].find(el => el.id == product[0].brand).name;
+    const brand = product[3].find(el => el.id == product[0].brand)?.name;
 
     const products = product[1]?.results.map(el => {
-        let characteristics = product[4].filter(item => item.product == el.pk);
-        let brand_image = product[3].find(item => item.id == el.brand).brand_image;
+        let characteristics = product[4].filter(item => item.product == el.id);
+        let brand_image = product[3].find(item => item.id == el.brand)?.brand_image;
         return {
             ...el,
             characteristics: characteristics,
@@ -144,9 +144,9 @@ const ProductInner = () => {
                                     dispatch(addItem(product[0]));
                                     dispatch(setIsModalOpen(true))
                                 }}>Sotib olish</button>
-                                <button className={`flex items-center justify-center border border-light-gray rounded-xl size-[54px] ${bookmarks.find(item => item.pk == product[0].pk) ? 'bg-yellow' : 'bg-white'}`} onClick={() => dispatch(addBookmark(product[0]))}>
+                                <button className={`flex items-center justify-center border border-light-gray rounded-xl size-[54px] ${bookmarks.find(item => item.id == product[0].id) ? 'bg-yellow' : 'bg-white'}`} onClick={() => dispatch(addBookmark(product[0]))}>
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M19.8459 9.81774C19.8367 7.47694 18.6087 5.27558 16.1874 4.4956C14.5249 3.95909 12.7139 4.25745 11.3075 6.27666C9.90111 4.25745 8.0901 3.95909 6.42756 4.4956C4.0061 5.27567 2.77801 7.47744 2.76912 9.81854C2.74673 14.4742 7.46439 18.0369 11.3063 19.7397L11.3075 19.7392L11.3087 19.7397C15.1508 18.0369 19.8689 14.4739 19.8459 9.81774Z" stroke={`${bookmarks.find(item => item.pk == product[0].pk) ? 'white' : '#01040E'}`} strokeWidth="1.5" strokeLinecap="square" />
+                                        <path d="M19.8459 9.81774C19.8367 7.47694 18.6087 5.27558 16.1874 4.4956C14.5249 3.95909 12.7139 4.25745 11.3075 6.27666C9.90111 4.25745 8.0901 3.95909 6.42756 4.4956C4.0061 5.27567 2.77801 7.47744 2.76912 9.81854C2.74673 14.4742 7.46439 18.0369 11.3063 19.7397L11.3075 19.7392L11.3087 19.7397C15.1508 18.0369 19.8689 14.4739 19.8459 9.81774Z" stroke={`${bookmarks.find(item => item.id == product[0].id) ? 'white' : '#01040E'}`} strokeWidth="1.5" strokeLinecap="square" />
                                     </svg>
                                 </button>
                             </div>
@@ -203,7 +203,7 @@ const ProductInner = () => {
                         >
                             {
                                 products.map(el => {
-                                    return <SwiperSlide key={el.pk} className='w-auto'>
+                                    return <SwiperSlide key={el.id} className='w-auto'>
                                         <div className="flex flex-col relative w-full max-w-full slider:max-w-[395px]">
                                             <div className="w-full relative flex items-center justify-center pt-[55px] h-[295px] 3xl:pt-[75px] px-[60px] 3xl:px-[80px] pb-[45px] z-10">
                                                 <img src={el.image} alt={el.image} className="w-full h-full z-10" />

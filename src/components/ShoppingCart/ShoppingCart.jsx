@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { removeItem, setBookmarkOpen, setIsModalOpen, setName, setPhoneNumber, setStatus, setEmail } from '../../store/cartSlice';
+import { removeItem, setBookmarkOpen, setIsModalOpen, setName, setPhoneNumber, setStatus, setEmail, addData } from '../../store/cartSlice';
 import { useMask } from '@react-input/mask';
 
 const ShoppingCart = () => {
@@ -21,6 +21,7 @@ const ShoppingCart = () => {
         }
         if (newData.cart.length > 0) {
             dispatch(addData({ apiEndpoint: '/orders/', newData }))
+            console.log(newData);
             dispatch(setIsModalOpen(false))
         } else {
             alert('Savatcha bo`sh')
@@ -50,7 +51,7 @@ const ShoppingCart = () => {
                                     }} className="min-w-[80px] size-[80px] sm:size-[120px] flex items-center justify-center bg-[#EBEBEB] p-[12px] rounded-xl">
                                         {el.image ? <img src={el.image} alt="product-image" className="h-full" /> : <p className="text-black">No Image</p>}
                                     </div>
-                                    <div className="text-[16px] sm:text-[22px] font-semibold font-inter text-black first-letter:uppercase">{el.name}</div>
+                                    <div className="text-[16px] sm:text-[22px] font-semibold font-inter text-black first-letter:uppercase">{el.name_uz}</div>
                                     <button onClick={() => dispatch(removeItem(el.id))} className='flex border border-light-gray rounded-full p-[11px] ms-auto'>
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M5 5L15 15" stroke="#01040E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -80,20 +81,22 @@ const ShoppingCart = () => {
                             value={phone_number}
                             onChange={(e) => dispatch(setPhoneNumber(e.target.value))}
                             required />
-                        <input type="text"
+                        <input type="email"
                             className='w-full bg-[#F8F9FF] px-[40px] h-[74px] rounded-[14px] text-[22px] text-dark-gray border border-[#E4E9F0]'
                             placeholder='Emailingiz'
                             value={email}
                             onChange={(e) => dispatch(setEmail(e.target.value))}
                             required />
-                        <select
-                            className='cart-select w-full bg-[#F8F9FF] px-[40px] h-[74px] rounded-[14px] text-[22px] text-dark-gray border border-[#E4E9F0]'
+                        <textarea
+                            name="message"
+                            id="msg"
+                            className='w-full bg-[#F8F9FF] px-[40px] py-[15px] h-[104px] rounded-[14px] text-[22px] text-dark-gray border border-[#E4E9F0] resize-none'
                             value={status}
-                            // defaultValue={'Siz bilan qanday bog’lanishimiz kerak?'}
-                            onChange={(e) => dispatch(setStatus(e.target.value))}>
-                            <option value="">Telefon raqam</option>
-                            <option value="">Email</option>
-                        </select>
+                            onChange={(e) => dispatch(setStatus(e.target.value))}
+                            placeholder='Xabaringiz...'
+                        >
+
+                        </textarea>
                         <button type='submit' className="inline-block w-full py-[21px] bg-blue hover:bg-yellow text-[18px] font-inter font-medium mt-[15px] text-white uppercase rounded-xl text-center">
                             XARIDNI AMALGA OSHIRISH
                         </button>

@@ -2,8 +2,7 @@ import { createContext, useReducer } from 'react'
 
 const initialValue = {
 	data: [],
-	term: '',
-	filter: 'default',
+	filter: 'ascending',
 }
 
 export const Context = createContext()
@@ -13,8 +12,6 @@ const reducer = (state = initialValue, action) => {
 	switch (type) {
 		case 'GET_DATA':
 			return { ...state, data: payload }
-		case 'ON_TERM':
-			return { ...state, term: payload }
 		case 'ON_FILTER':
 			{
 				

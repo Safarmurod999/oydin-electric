@@ -19,9 +19,16 @@ export const addData = createAsyncThunk(
   "data/addData",
   async ({ apiEndpoint, newData }, thunkAPI) => {
     try {
+      let data = newData.cart.map(el => {
+        return {
+          product: el.id,
+        }
+      })
       const response = await axios.post(`${BASE_URL}${apiEndpoint}`, {
         name: newData.name,
         phone_number: newData.phone_number,
+        email: newData.email,
+        message: newData.status,
         items: data
       });
       return response.data;
@@ -158,9 +165,11 @@ const cartSlice = createSlice({
       .addCase(addData.fulfilled, (state, action) => {
         state.loading = false;
         state.cart = [];
+        state.bookmarks = [];
         state.name = '';
         state.phone_number = '';
-        state.cartLength = 0;
+        state.email = '';
+        state.status = ''
         localStorage.removeItem("cartItems");
       })
       .addCase(addData.rejected, (state) => {

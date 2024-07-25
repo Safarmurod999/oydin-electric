@@ -1,15 +1,18 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
+
+import { useLocation, useSearchParams } from "react-router-dom"
+import { useFetchMultipleAPIs } from "@/hooks/hooks"
+import { filterHandler } from "@/utils/filter"
+import { Context } from '@/context/catalogContext';
+import { BASE_URL } from "@/const/data";
 
 import { Container, Pagination, Bookmarks, ShoppingCart, Spinner } from "@/components/index"
 import all from "@/assets/icons/brands/all.svg";
-import { productsArray } from "@/const/data"
 
 import SearchBar from "./SearchBar/SearchBar"
 import Aside from "./Aside/Aside"
 import ProductCard from "./ProductCard/ProductCard"
-import { useLocation, useSearchParams } from "react-router-dom"
-import { useFetchMultipleAPIs } from "@/hooks/hooks"
-import { BASE_URL } from "@/const/data";
+
 
 const Home = () => {
   const location = useLocation();
@@ -40,13 +43,14 @@ const Home = () => {
   const [limit, setLimit] = useState(9);
   const [isLoading, setIsLoading] = useState(true);
 
+  const { state, dispatch } = useContext(Context)
+
   const fetchData = async () => {
     try {
       const response = await fetch(`${BASE_URL}/product-list${queryString.length ? '/' + queryString : '/?'}${queryString.length ? `&limit=${limit}&offset=${offset}` : `limit=${limit}&offset=${offset}`}`);
       const data = await response.json();
       setItems(data);
-      console.log(data);
-      // dispatch({ type: 'GET_DATA', payload: data.results })
+      dispatch({ type: 'GET_DATA', payload: data.results })
       setIsLoading(false);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -96,21 +100,24 @@ const Home = () => {
     setSearchParams(params);
   }
 
-  const products = data[0]?.results.map(el => {
-    let characteristics = data[3].filter(item => item.data == el.pk);
-    let brand_image = data[2].find(item => item.id == el.brand)?.brand_image;
-    console.log(data[2]);
-    return {
-      ...el,
-      characteristics: characteristics,
-      brand_image: brand_image
-    }
-  });
+  if (items && data && items.results) {
+    var products = items.results.map(el => {
+      let characteristics = data[3].filter(item => item.product == el.id);
+      let brand_image = data[2].find(item => item.id == el.brand)?.brand_image;
+      return {
+        ...el,
+        characteristics: characteristics,
+        brand_image: brand_image
+      }
+    });
+  }
 
   const paginate = (pageNumber) => {
     setOffset((pageNumber - 1) * limit);
     setCurrentPage(pageNumber);
   };
+  const filterArray = filterHandler(state.data, state.filter);
+
   return (
     !loading && (
       <section id='#'>
@@ -188,22 +195,26 @@ const Home = () => {
                 </svg>
                 <p>Filtrlar</p>
               </div>
-              <div className="relative grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 gap-8 grow mb-12 min-h-[700px]">
+              {!isLoading && items?.count == 0 && <div className="text-center w-full text-[30px] min-h-[710px] flex items-center justify-center">Ma'lumot topilmadi</div>}
+              <div className="relative grid grid-cols-2 2xl:grid-cols-3 grid-rows-3 gap-[10px] md:gap-8 grow mb-12 min-h-[770px] slider:min-h-[2015px]">
                 {
-                  !isLoading ? (productsArray.map(el => {
-                    return <ProductCard key={el.id} el={el} />
-                  })) : <Spinner position={"relative"} />
+                  !isLoading ? filterArray.length ? (filterArray.map(el => {
+                    let item = products.find(_el => _el.id == el.id);
+                    return <ProductCard key={el.id} el={item} />
+                  })) : '' : <Spinner position={"relative"} />
                 }
               </div>
               <div className="mt-6">
-                <Pagination
-                  totalItems={data[0].count}
-                  itemsPerPage={limit}
-                  currentPage={currentPage}
-                  paginate={paginate}
-                  offset={offset}
-                  setOffset={setOffset}
-                />
+                {
+                  items.count > 0 ? (<Pagination
+                    totalItems={items?.count}
+                    itemsPerPage={limit}
+                    currentPage={currentPage}
+                    paginate={paginate}
+                    offset={offset}
+                    setOffset={setOffset}
+                  />) : ''
+                }
               </div>
             </div>
           </div>

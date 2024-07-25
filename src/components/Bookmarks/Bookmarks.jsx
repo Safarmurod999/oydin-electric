@@ -28,7 +28,7 @@ const Bookmarks = () => {
                                     }} className="min-w-[80px] size-[80px] sm:size-[120px] flex items-center justify-center bg-[#EBEBEB] p-[12px] rounded-xl">
                                         {el.image ? <img src={el.image} alt="product-image" className="h-full" /> : <p className="text-black">No Image</p>}
                                     </div>
-                                    <div className="text-[16px] sm:text-[22px] font-semibold font-inter text-black">{el.name}</div>
+                                    <div className="text-[16px] sm:text-[22px] font-semibold font-inter text-black first-letter:uppercase">{el.name_uz}</div>
                                     <button onClick={() => dispatch(removeBookmark(el.id))} className='flex border border-light-gray rounded-full p-[11px] ms-auto'>
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M5 5L15 15" stroke="#01040E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -60,7 +60,7 @@ const Bookmarks = () => {
 
             </div>
             <div onClick={() => dispatch(setBookmarkOpen(true))} className="fixed right-[10px] md:right-[50px] bottom-[100px] z-20 bg-blue rounded-2xl p-[18px] flex items-center justify-center ">
-                <svg className="relative" width="36" height="34" viewBox="0 0 36 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className="relative size-[18px] slider:size-[36px]" width="36" height="34" viewBox="0 0 36 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M35.9998 12.2061C35.9806 7.06445 33.3917 2.22912 28.2875 0.515874C24.7826 -0.662585 20.9649 -0.0072371 18 4.42801C15.0352 -0.0072371 11.2174 -0.662585 7.71255 0.515874C2.60785 2.2293 0.0189069 7.06556 0.00016743 12.2078C-0.0470412 22.4342 9.8983 30.2598 17.9975 34L18 33.9988L18.0025 34C26.1022 30.2596 36.0483 22.4334 35.9998 12.2061Z" fill="#F8F9FF" />
                 </svg>
                 {

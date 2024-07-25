@@ -1,12 +1,15 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useDebouncedCallback } from 'use-debounce';
+import { Context } from '@/context/catalogContext';
 
 const SearchBar = ({ search, setSearch, params, brand, category, setParams, setSearchParams, searchParams }) => {
     const [openSelect, setOpenSelect] = useState(false);
-    const [filter, setFilter] = useState('So’ngi tovarlar');
     const [layout, setLayout] = useState('grid');
-    const handleFilter = (filter) => {
-        setFilter(filter)
+    const [filter, setFilter] = useState("Harflar: O'sish tartibida");
+    const { state, dispatch } = useContext(Context)
+    const handleFilter = (filter, name) => {
+        dispatch({ type: 'ON_FILTER', payload: filter })
+        setFilter(name);
         setOpenSelect(false)
     }
     const handleSearch = useDebouncedCallback((search) => {
@@ -76,9 +79,9 @@ const SearchBar = ({ search, setSearch, params, brand, category, setParams, setS
 
                     <div className={`absolute right-0 z-20 mt-2 w-full origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none ${openSelect ? 'block' : 'hidden'}`} aria-orientation="vertical">
                         <div className="py-1" role="none">
-                            <div className="block px-4 py-2 text-dark-gray hover:bg-[#F3F4F6] cursor-pointer" onClick={() => handleFilter("So'nggi Tovarlar")} id="menu-item-0">So'nggi Tovarlar</div>
-                            <div className="block px-4 py-2 text-dark-gray hover:bg-[#F3F4F6] cursor-pointer" onClick={() => handleFilter("Eng ko'p sotilgan tovarlar")} id="menu-item-1">Eng ko'p sotilgan tovarlar</div>
-                            <div className="block px-4 py-2 text-dark-gray hover:bg-[#F3F4F6] cursor-pointer" onClick={() => handleFilter('Eng yaxshi tovarlar')} id="menu-item-2">Eng yaxshi tovarlar</div>
+                            {/* <div className="block px-4 py-2 text-dark-gray hover:bg-[#F3F4F6] cursor-pointer" onClick={() => handleFilter("latest", "So'nggi Tovarlar")} id="menu-item-0">So'nggi Tovarlar</div> */}
+                            <div className="block px-4 py-2 text-dark-gray hover:bg-[#F3F4F6] cursor-pointer" onClick={() => handleFilter("ascending", "Harflar: O'sish tartibida")} id="menu-item-1">Harflar: O'sish tartibida</div>
+                            <div className="block px-4 py-2 text-dark-gray hover:bg-[#F3F4F6] cursor-pointer" onClick={() => handleFilter('descending', "Harflar: Kamayish tartibida")} id="menu-item-2">Harflar: Kamayish tartibida</div>
                         </div>
                     </div>
                 </div>
