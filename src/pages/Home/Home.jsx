@@ -25,6 +25,8 @@ const Home = () => {
   const [brand, setBrand] = useState(searchParams.getAll('brand') || '');
   const [search, setSearch] = useState(searchParams.get('q') || '');
 
+  console.log(searchParams, params);
+
   const [openAside, setOpenAside] = useState(false);
 
   const urls = [

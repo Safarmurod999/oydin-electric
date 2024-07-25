@@ -9,61 +9,59 @@ const Aside = ({ openAside, setOpenAside, category, brand, search, setBrand, set
     const [params, setParams] = useState(Object.fromEntries(searchParams.entries()))
 
     const handleCategory = (newCategory) => {
-        let categoryArray = searchParams.getAll('category')
+        let categoryArray = searchParams.getAll('category');
+
+        if (searchParams.getAll('brand').length) {
+            params.brand = brand
+        }
+        if (searchParams.get('q') && searchParams.get('q').length > 0) {
+            params.q = search
+        } else {
+            delete params.q;
+        }
         if (!categoryArray.includes(`${newCategory}`)) {
-            if (searchParams.getAll('brand').length) {
-                params.brand = brand
-            }
-            if (searchParams.get('q') && searchParams.get('q').length > 0) {
-                params.q = search
-            }
             categoryArray.push(newCategory)
             setCategory(categoryArray);
             params.category = categoryArray;
-            setParams(params);
-            setSearchParams(params);
         } else {
-            if (searchParams.getAll('brand').length) {
-                params.brand = brand
-            }
-            if (searchParams.get('q') && searchParams.get('q').length > 0) {
-                params.q = search
-            }
             categoryArray = categoryArray.filter((item) => item != newCategory);
-            setCategory(categoryArray);
-            params.category = categoryArray;
-            setParams(params);
-            setSearchParams(params);
+            if (categoryArray.length == 0) {
+                delete params.category;
+                setCategory([]);
+            } else {
+                setCategory(categoryArray);
+                params.category = categoryArray;
+            }
         }
-
+        setParams(params);
+        setSearchParams(params);
     }
     const handleBrand = (newBrand) => {
-        let brandArray = searchParams.getAll('brand')
+        let brandArray = searchParams.getAll('brand');
+        if (searchParams.getAll('category').length) {
+            params.category = category
+        }
+        if (searchParams.get('q') && searchParams.get('q').length > 0) {
+            params.q = search
+        } else {
+            delete params.q;
+        }
         if (!brandArray.includes(`${newBrand}`)) {
-            if (searchParams.getAll('category').length) {
-                params.category = category
-            }
-            if (searchParams.get('q') && searchParams.get('q').length > 0) {
-                params.q = search
-            }
             brandArray.push(newBrand)
             setBrand(brandArray);
             params.brand = brandArray;
-            setParams(params);
-            setSearchParams(params);
         } else {
-            if (searchParams.getAll('category').length) {
-                params.category = category
-            }
-            if (searchParams.get('q') && searchParams.get('q').length > 0) {
-                params.q = search
-            }
             brandArray = brandArray.filter((item) => item != newBrand);
-            setBrand(brandArray);
-            params.brand = brandArray;
-            setParams(params);
-            setSearchParams(params);
+            if (brandArray.length == 0) {
+                delete params.brand;
+                setBrand([]);
+            } else {
+                setBrand(brandArray);
+                params.brand = brandArray;
+            }
         }
+        setParams(params);
+        setSearchParams(params);
     }
     return (
         <aside className={`aside fixed top-[100px] w-full sm:w-auto md:top-[110px] left-0 grow h-[91svh] xl:static p-6 xl:p-0 overflow-y-scroll xl:overflow-y-visible

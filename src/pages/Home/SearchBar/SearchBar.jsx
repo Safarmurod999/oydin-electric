@@ -13,30 +13,22 @@ const SearchBar = ({ search, setSearch, params, brand, category, setParams, setS
         setOpenSelect(false)
     }
     const handleSearch = useDebouncedCallback((search) => {
+        if (searchParams.getAll('brand').length) {
+            params.brand = brand
+        }
+        if (searchParams.getAll('category').length) {
+            params.category = category
+        }
         if (search.length > 0) {
-            if (searchParams.getAll('brand').length) {
-                params.brand = brand
-            }
-            if (searchParams.getAll('category').length) {
-                params.category = category
-            }
             setSearch(search);
             params.q = search;
-            setParams(params);
-            setSearchParams(params);
         } else {
-            if (searchParams.getAll('brand').length) {
-                params.brand = brand
-            }
-            if (searchParams.getAll('category').length) {
-                params.category = category
-            }
             setSearch('');
             delete params.q;
             searchParams.delete('q');
-            setParams(params);
-            setSearchParams(params);
         }
+        setParams(params);
+        setSearchParams(params);
     }, 2000)
     return (
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
