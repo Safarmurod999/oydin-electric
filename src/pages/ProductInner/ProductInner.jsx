@@ -206,8 +206,13 @@ const ProductInner = () => {
                                     return <SwiperSlide key={el.id} className='w-auto'>
                                         <div className="flex flex-col relative w-full max-w-full slider:max-w-[395px]">
                                             <div className="w-full relative flex items-center justify-center pt-[55px] h-[295px] 3xl:pt-[75px] px-[60px] 3xl:px-[80px] pb-[45px] z-10">
-                                                <img src={el.image} alt={el.image} className="w-full h-full z-10" />
-                                                <img src={el.brand_image} alt={el.brand_image} className="absolute top-[30px] left-[30px] w-[70px] 3xl:w-[108px] z-10" />
+                                                {
+                                                    el.image ? <img src={el?.image} alt={el.image} className="w-full h-full z-10" /> : <p className="text-black">No Image</p>
+                                                }
+                                                {/* <img src={el.image} alt={el.image} className="w-full h-full z-10" /> */}
+                                                {
+                                                    el.brand_image && <img src={el.brand_image} alt={el.brand_image} className="absolute top-[30px] left-[30px] w-[70px] 3xl:w-[108px] z-10" />
+                                                }
                                                 <img src={corner} alt="corner" className="absolute top-0 right-0 z-0 w-full h-full" />
                                             </div>
 

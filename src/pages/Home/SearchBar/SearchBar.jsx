@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react'
-import { useDebouncedCallback } from 'use-debounce';
 import { Context } from '@/context/catalogContext';
 
 const SearchBar = ({ search, setSearch, params, brand, category, setParams, setSearchParams, searchParams }) => {
@@ -12,7 +11,7 @@ const SearchBar = ({ search, setSearch, params, brand, category, setParams, setS
         setFilter(name);
         setOpenSelect(false)
     }
-    const handleSearch = useDebouncedCallback((search) => {
+    const handleSearch = (search) => {
         if (searchParams.getAll('brand').length) {
             params.brand = brand
         }
@@ -29,7 +28,7 @@ const SearchBar = ({ search, setSearch, params, brand, category, setParams, setS
         }
         setParams(params);
         setSearchParams(params);
-    }, 2000)
+    }
     return (
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
 

@@ -25,8 +25,6 @@ const Home = () => {
   const [brand, setBrand] = useState(searchParams.getAll('brand') || '');
   const [search, setSearch] = useState(searchParams.get('q') || '');
 
-  console.log(searchParams, params);
-
   const [openAside, setOpenAside] = useState(false);
 
   const urls = [
@@ -38,7 +36,6 @@ const Home = () => {
 
   const { data, loading, error } = useFetchMultipleAPIs(urls);
   const [items, setItems] = useState([]);
-  const [term, setTerm] = useState('');
   const [debounceTimer, setDebounceTimer] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [offset, setOffset] = useState(0);

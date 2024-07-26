@@ -1,12 +1,14 @@
 
 import { BrowserRouter } from 'react-router-dom'
-import './App.css'
 import Router from './routes/router'
+import { Toaster, toast } from 'sonner'
+import './App.css'
 
 function App() {
 
   return (
     <BrowserRouter>
+      <Toaster />
       <Router />
     </BrowserRouter>
   )

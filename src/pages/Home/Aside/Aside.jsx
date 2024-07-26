@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import FilterDropdown from '@/components/FilterDropdown/FilterDropdown'
-import { productArray } from "@/const/data.js"
-import { companyArray } from '@/const/data'
 import { useSearchParams } from 'react-router-dom'
 const Aside = ({ openAside, setOpenAside, category, brand, search, setBrand, setCategory, setSearch, categories, brands }) => {
     const [searchParams, setSearchParams] = useSearchParams();
@@ -18,6 +16,7 @@ const Aside = ({ openAside, setOpenAside, category, brand, search, setBrand, set
             params.q = search
         } else {
             delete params.q;
+            searchParams.delete('q');
         }
         if (!categoryArray.includes(`${newCategory}`)) {
             categoryArray.push(newCategory)
@@ -27,12 +26,17 @@ const Aside = ({ openAside, setOpenAside, category, brand, search, setBrand, set
             categoryArray = categoryArray.filter((item) => item != newCategory);
             if (categoryArray.length == 0) {
                 delete params.category;
+
+                console.log(categoryArray);
+                searchParams.delete('category');
                 setCategory([]);
             } else {
                 setCategory(categoryArray);
+                console.log(categoryArray); 
                 params.category = categoryArray;
             }
         }
+
         setParams(params);
         setSearchParams(params);
     }
@@ -45,6 +49,7 @@ const Aside = ({ openAside, setOpenAside, category, brand, search, setBrand, set
             params.q = search
         } else {
             delete params.q;
+            searchParams.delete('q');
         }
         if (!brandArray.includes(`${newBrand}`)) {
             brandArray.push(newBrand)
@@ -54,6 +59,7 @@ const Aside = ({ openAside, setOpenAside, category, brand, search, setBrand, set
             brandArray = brandArray.filter((item) => item != newBrand);
             if (brandArray.length == 0) {
                 delete params.brand;
+                searchParams.delete('brand');
                 setBrand([]);
             } else {
                 setBrand(brandArray);

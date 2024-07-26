@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { removeItem, setBookmarkOpen, setIsModalOpen, setName, setPhoneNumber, setStatus, setEmail, addData } from '../../store/cartSlice';
 import { useMask } from '@react-input/mask';
+import { toast } from 'sonner';
 
 const ShoppingCart = () => {
     const navigate = useNavigate();
@@ -19,12 +20,24 @@ const ShoppingCart = () => {
             status,
             cart
         }
-        if (newData.cart.length > 0) {
-            dispatch(addData({ apiEndpoint: '/orders/', newData }))
-            console.log(newData);
-            dispatch(setIsModalOpen(false))
+        if (newData.phone_number.length == 19) {
+            if (newData.cart.length > 0) {
+                dispatch(addData({ apiEndpoint: '/orders/', newData }))
+                toast.success('Buyurtma muvaffaqiyatli qabul qilindi!',
+                    {
+                        position: 'top-right'
+                    }
+                );
+                dispatch(setIsModalOpen(false))
+            } else {
+                toast.error('Savatchangiz bo`sh!', {
+                    position: 'top-right'
+                });
+            }
         } else {
-            alert('Savatcha bo`sh')
+            toast.error("Telefon raqamni to'liq kiriting!", {
+                position: 'top-right'
+            });
         }
 
     }
@@ -72,7 +85,15 @@ const ShoppingCart = () => {
                             className='w-full bg-[#F8F9FF] px-[40px] h-[74px] rounded-[14px] text-[22px] text-dark-gray border border-[#E4E9F0]'
                             placeholder='Ismingiz'
                             value={name}
-                            onChange={(e) => dispatch(setName(e.target.value))}
+                            onChange={(e) => {
+                                if (/\d/.test(e.target.value)) {
+                                    toast.error('Raqam kiritish mumkin emas!', {
+                                        position: 'top-right'
+                                    })
+                                } else {
+                                    dispatch(setName(e.target.value))
+                                }
+                            }}
                             required />
                         <input type="text"
                             className='w-full bg-[#F8F9FF] px-[40px] h-[74px] rounded-[14px] text-[22px] text-dark-gray border border-[#E4E9F0]'
@@ -94,6 +115,7 @@ const ShoppingCart = () => {
                             value={status}
                             onChange={(e) => dispatch(setStatus(e.target.value))}
                             placeholder='Xabaringiz...'
+                            required
                         >
 
                         </textarea>

@@ -7,7 +7,7 @@ const initialState = {
   name: '',
   phone_number: '',
   email: '',
-  status: "Siz bilan qanday bog'lanamiz?",
+  status: "",
   cart: JSON.parse(localStorage.getItem("cartItems")) || [],
   bookmarks: JSON.parse(localStorage.getItem("bookMarks")) || [],
   bookmarksLength: JSON.parse(localStorage.getItem("bookMarks"))?.length || 0,

@@ -10,8 +10,12 @@ const ProductCard = ({ el }) => {
     return (
         <div className="flex flex-col relative w-full h-full">
             <div className="w-full relative flex items-center justify-center pt-[55px] 3xl:pt-[75px] min-h-[154px] max-h-[154px] sm:min-h-[295px] sm:max-h-[295px] px-[60px] 3xl:px-[80px] pb-[45px] z-10 overflow-hidden">
-                <img src={el?.image} alt={el.image} className="max-w-[92px] sm:max-w-full w-full z-10 h-full" />
-                <img src={el?.brand_image} alt={el.brand} className="absolute top-[30px] left-[30px] w-[43px] sm:w-[70px] 3xl:w-[108px] z-10" />
+                {
+                    el.image ? <img src={el?.image} alt={el.image} className="max-w-[92px] sm:max-w-full w-full z-10 h-full" /> : <p className="text-black">No Image</p>
+                }
+                {
+                    el.brand_image && <img src={el?.brand_image} alt={el.brand} className="absolute top-[30px] left-[30px] w-[43px] sm:w-[70px] 3xl:w-[108px] z-10" />
+                }
                 <img src={corner} alt="corner" className="absolute top-0 right-0 z-0 w-full h-full" />
             </div>
             <div className="flex flex-col items-center justify-between px-[12px] slider:px-[30px] pt-[50px] pb-[15px] slider:pb-[40px] -mt-[45px] 3xl:-mt-[40px] 3xl:-mt-12 border-[3px] border-gray rounded-xl slider:rounded-3xl h-full">
