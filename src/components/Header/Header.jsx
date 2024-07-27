@@ -30,7 +30,7 @@ const Header = () => {
             <nav className='relative py-[15px] lg:py-[30px] bg-gray rounded-b-[24px] '>
                 <Container style={'flex items-center justify-between'}>
                     <div className='navbar-logo'>
-                        <a href="/">
+                        <a href="https://oydin-electric.framer.website/">
                             <img src={logo} alt="Logo" />
                         </a>
                     </div>

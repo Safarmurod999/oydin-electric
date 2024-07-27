@@ -73,16 +73,16 @@ const Footer = () => {
                     {/* <img src={footer_bottom} alt="Image" className='absolute left-0 top-0 w-full h-full rounded-xl' /> */}
                     <div className="w-full flex flex-col sm:flex-row items-start justify-between gap-[15px] sm:gap-[30px] z-10">
                         <div className="max-w-[402px] z-10">
-                            <a href="/"><img className='w-[100px] md:w-auto' src={footer_logo} alt="Logo" /></a>
+                            <a href="https://oydin-electric.framer.website/"><img className='w-[100px] md:w-auto' src={footer_logo} alt="Logo" /></a>
                             <p className='text-dark-gray font-inter text-[12px] md:text-[18px] mt-[20px] md:mt-[32px]'>Kompaniyamiz 10 yildan ortiq vaqt davomida xizmat ko’rsatib kelmoqdamiz</p>
                         </div>
                         <div className="max-w-full sm:max-w-[60%] z-10">
                             <ul className='flex flex-wrap items-center justify-start sm:justify-end gap-[15px] sm:gap-[32px]'>
-                                <li className='font-inter font-bold uppercase text-[14px] sm:text-[18px] text-white cursor-pointer'><a href="/">KATALOG</a></li>
-                                <li className='font-inter font-bold uppercase text-[14px] sm:text-[18px] text-white cursor-pointer'><a href="/">B2B SOTUV</a></li>
-                                <li className='font-inter font-bold uppercase text-[14px] sm:text-[18px] text-white cursor-pointer'><a href="/">YANGILIKLAR</a></li>
+                                <li className='font-inter font-bold uppercase text-[14px] sm:text-[18px] text-white cursor-pointer'><a href="/catalog">KATALOG</a></li>
+                                <li className='font-inter font-bold uppercase text-[14px] sm:text-[18px] text-white cursor-pointer'><a href="https://oydin-electric.framer.website/b2b">B2B SOTUV</a></li>
+                                <li className='font-inter font-bold uppercase text-[14px] sm:text-[18px] text-white cursor-pointer'><a href="https://oydin-electric.framer.website/news">YANGILIKLAR</a></li>
                                 <li className='font-inter font-bold uppercase text-[14px] sm:text-[18px] text-white cursor-pointer'><a href="/">BRENDLAR</a></li>
-                                <li className='font-inter font-bold uppercase text-[14px] sm:text-[18px] text-white cursor-pointer'><a href="/">KOMPANIYA HAQIDA</a></li>
+                                <li className='font-inter font-bold uppercase text-[14px] sm:text-[18px] text-white cursor-pointer'><a href="https://oydin-electric.framer.website/about-us">KOMPANIYA HAQIDA</a></li>
                                 <li className='font-inter font-bold uppercase text-[14px] sm:text-[18px] text-white cursor-pointer'><a href="/">ALOQA</a></li>
                             </ul>
                             <ul className="flex items-center justify-start sm:justify-end mt-[20px] sm:mt-[40px] gap-[10px] sm:gap-[18px]">
