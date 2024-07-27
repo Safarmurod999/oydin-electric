@@ -45,7 +45,7 @@ const ShoppingCart = () => {
         <div className={`fixed top-0 left-0 z-50 w-full h-dvh bg-blur backdrop-blur transition duration-300 ${isModalOpen ? 'flex' : 'hidden'} `}>
             <div className="fixed sm:top-[50%] sm:left-[50%] sm:-translate-y-[50%] sm:-translate-x-[50%] z-50 w-full h-full sm:h-auto sm:max-w-[670px] rounded-0 sm:rounded-[24px] bg-[#FDFDFD] p-[20px] sm:p-[40px]">
                 <div className="relative w-full max-h-[85vh] cart overflow-y-scroll">
-                    <button className=' flex bg-blue -mb-[20px] rounded-full p-[11px] ms-auto z-50' onClick={() => dispatch(setIsModalOpen(false))}>
+                    <button aria-label='modal-btn' className=' flex bg-blue -mb-[20px] rounded-full p-[11px] ms-auto z-50' onClick={() => dispatch(setIsModalOpen(false))}>
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M5 5L15 15" stroke="#F8F9FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             <path d="M15 5L5 15" stroke="#F8F9FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -65,7 +65,7 @@ const ShoppingCart = () => {
                                         {el.image ? <img src={el.image} alt="product-image" className="h-full" /> : <p className="text-black">No Image</p>}
                                     </div>
                                     <div className="text-[16px] sm:text-[22px] font-semibold font-inter text-black first-letter:uppercase">{el.name_uz}</div>
-                                    <button onClick={() => dispatch(removeItem(el.id))} className='flex border border-light-gray rounded-full p-[11px] ms-auto'>
+                                    <button aria-label='remove-btn' onClick={() => dispatch(removeItem(el.id))} className='flex border border-light-gray rounded-full p-[11px] ms-auto'>
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M5 5L15 15" stroke="#01040E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                             <path d="M15 5L5 15" stroke="#01040E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -119,7 +119,7 @@ const ShoppingCart = () => {
                         >
 
                         </textarea>
-                        <button type='submit' className="inline-block w-full py-[21px] bg-blue hover:bg-yellow text-[18px] font-inter font-medium mt-[15px] text-white uppercase rounded-xl text-center">
+                        <button aria-label='submit-btn' type='submit' className="inline-block w-full py-[21px] bg-blue hover:bg-yellow text-[18px] font-inter font-medium mt-[15px] text-white uppercase rounded-xl text-center">
                             XARIDNI AMALGA OSHIRISH
                         </button>
                     </form>

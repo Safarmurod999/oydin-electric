@@ -73,7 +73,7 @@ const Aside = ({ openAside, setOpenAside, category, brand, search, setBrand, set
         <aside className={`aside fixed top-[100px] w-full sm:w-auto md:top-[110px] left-0 grow h-[91svh] xl:static p-6 xl:p-0 overflow-y-scroll xl:overflow-y-visible
             drop-shadow-lg xl:drop-shadow-none rounded-lg transition duration-300 xl:translate-x-0
             bg-white xl:bg-transparent z-30 ${openAside ? 'translate-x-0' : '-translate-x-[100%]'}`}>
-            <button className='block xl:hidden mb-6 ml-auto' onClick={() => setOpenAside(false)}>
+            <button aria-label='open-btn' className='block xl:hidden mb-6 ml-auto' onClick={() => setOpenAside(false)}>
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="2.12134" width="24" height="3" rx="1" transform="rotate(45 2.12134 0)" fill="#231F20" />
                     <rect x="0.121338" y="17" width="24" height="3" rx="1" transform="rotate(-45 0.121338 17)" fill="#231F20" />

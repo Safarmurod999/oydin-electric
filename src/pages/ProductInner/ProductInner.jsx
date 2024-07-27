@@ -58,13 +58,13 @@ const ProductInner = () => {
                 <Container>
                     <ul className='flex flex-wrap items-center justify-start gap-[5px] mb-[40px]'>
                         <li className="uppercase font-inter text-dark-gray transition duration-300 hover:text-blue cursor-pointer text-sm">
-                            <a href="/" className='whitespace-nowrap'>BOSH SAHIFA  /</a>
+                            <a aria-label='breadcroumb' href="/" className='whitespace-nowrap'>BOSH SAHIFA  /</a>
                         </li>
                         <li className="uppercase font-inter text-dark-gray transition duration-300 hover:text-blue cursor-pointer text-sm">
-                            <a href="/catalog" className='whitespace-nowrap'>KATALOG  /</a>
+                            <a aria-label='breadcroumb' href="/catalog" className='whitespace-nowrap'>KATALOG  /</a>
                         </li>
                         <li className="uppercase font-inter text-dark-gray transition duration-300 hover:text-blue cursor-pointer text-sm">
-                            <a href={`/catalog/${id}`} className='whitespace-nowrap'>{product[0].name}</a>
+                            <a aria-label='breadcroumb' href={`/catalog/${id}`} className='whitespace-nowrap'>{product[0].name}</a>
                         </li>
                     </ul>
                     {/* PAGE TOP */}
@@ -73,7 +73,7 @@ const ProductInner = () => {
                             <path d="M0 7.99999C0 3.58171 3.58172 0 8 0L18.5 0L18.5 64H15.3683C12.6972 64 10.2024 62.6669 8.71779 60.4465L1.34951 49.4258C0.469653 48.1099 0 46.5624 0 44.9794L0 7.99999Z" fill="#FAFAFA" />
                             <path d="M8 0.5L18 0.5L18 63.5H15.3683C12.8642 63.5 10.5252 62.2503 9.13344 60.1686L1.76517 49.1479C0.940299 47.9142 0.5 46.4635 0.5 44.9794L0.5 7.99999C0.5 3.85785 3.85786 0.5 8 0.5Z" stroke="#66708D" strokeOpacity="0.3" />
                         </svg>
-                        <a href="/catalog" className='flex items-center justify-center gap-[10px] border-y-[1.5px] border-y-light-gray -mx-[1px] w-[234px]'>
+                        <a aria-label='back-link' href="/catalog" className='flex items-center justify-center gap-[10px] border-y-[1.5px] border-y-light-gray -mx-[1px] w-[234px]'>
                             <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M4.60425 13.2969L20.8542 13.2969" stroke="#01040E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                                 <path d="M11.1582 19.8236L4.60404 13.2976L11.1582 6.77051" stroke="#01040E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -238,7 +238,7 @@ const ProductInner = () => {
                                                         <svg className="bottom-0 left-0" width="20" height="54" viewBox="0 0 20 54" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                             <path className="group-hover:fill-yellow" d="M0 6C0 2.68629 2.68629 0 6 0H20V54H14.2687C12.4659 54 10.7588 53.1895 9.61929 51.7925L1.35063 41.6558C0.47708 40.5849 0 39.2452 0 37.8632V6Z" fill="#0236E5" />
                                                         </svg>
-                                                        <button onClick={() => navigate(`/catalog/${el.id}`)} className="relative flex items-center justify-center gap-[10px] grow py-[15px] -mx-[1px] bg-blue group-hover:bg-yellow">
+                                                        <button aria-label='navigate-btn' onClick={() => navigate(`/catalog/${el.id}`)} className="relative flex items-center justify-center gap-[10px] grow py-[15px] -mx-[1px] bg-blue group-hover:bg-yellow">
                                                             <svg className="z-10" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                 <path className="group-hover:fill-black" fillRule="evenodd" clipRule="evenodd" d="M17.0183 7.67028C17.6913 7.67728 18.6263 7.68028 19.4203 7.67728C19.8263 7.67628 20.0333 7.18528 19.7513 6.89028C19.2423 6.35628 18.5333 5.61028 17.8203 4.86228C17.1053 4.11128 16.3873 3.35628 15.8643 2.80828C15.5763 2.50428 15.0713 2.71328 15.0713 3.13328V5.70328C15.0713 6.78228 15.9503 7.67028 17.0183 7.67028Z" fill="#F8F9FF" />
                                                                 <path className="group-hover:fill-black" fillRule="evenodd" clipRule="evenodd" d="M14.8594 13.811H8.1314C7.7174 13.811 7.3814 13.475 7.3814 13.061C7.3814 12.647 7.7174 12.311 8.1314 12.311H14.8594C15.2734 12.311 15.6094 12.647 15.6094 13.061C15.6094 13.475 15.2734 13.811 14.8594 13.811ZM12.5904 17.232H8.1314C7.7174 17.232 7.3814 16.896 7.3814 16.482C7.3814 16.068 7.7174 15.732 8.1314 15.732H12.5904C13.0054 15.732 13.3404 16.068 13.3404 16.482C13.3404 16.896 13.0054 17.232 12.5904 17.232ZM8.1314 8.891H11.0744C11.4884 8.891 11.8244 9.227 11.8244 9.641C11.8244 10.055 11.4884 10.391 11.0744 10.391H8.1314C7.7174 10.391 7.3814 10.055 7.3814 9.641C7.3814 9.227 7.7174 8.891 8.1314 8.891ZM19.8534 9.094H16.8894C15.1234 9.085 13.6654 7.622 13.6654 5.838V2.698C13.6654 2.455 13.4724 2.25 13.2214 2.25H8.0664C5.6624 2.25 3.7124 4.229 3.7124 6.647V17.158C3.7124 19.693 5.7594 21.75 8.2694 21.75H15.9434C18.3474 21.75 20.2874 19.79 20.2874 17.372V9.533C20.2874 9.289 20.0944 9.094 19.8534 9.094Z" fill="#F8F9FF" />
@@ -263,7 +263,7 @@ const ProductInner = () => {
                             <path d="M0 7.99999C0 3.58171 3.58172 0 8 0L18.5 0L18.5 64H15.3683C12.6972 64 10.2024 62.6669 8.71779 60.4465L1.34951 49.4258C0.469653 48.1099 0 46.5624 0 44.9794L0 7.99999Z" fill="#FAFAFA" />
                             <path d="M8 0.5L18 0.5L18 63.5H15.3683C12.8642 63.5 10.5252 62.2503 9.13344 60.1686L1.76517 49.1479C0.940299 47.9142 0.5 46.4635 0.5 44.9794L0.5 7.99999C0.5 3.85785 3.85786 0.5 8 0.5Z" stroke="#66708D" strokeOpacity="0.3" />
                         </svg>
-                        <a href="/catalog" className='flex items-center justify-center gap-[10px] border-y-[1.5px] border-y-light-gray -mx-[1px] grow'>
+                        <a aria-label='all-btn' href="/catalog" className='flex items-center justify-center gap-[10px] border-y-[1.5px] border-y-light-gray -mx-[1px] grow'>
                             <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M4.7373 9.7118V16.2696C4.7373 17.1385 5.20141 17.9421 5.95351 18.3761L11.6327 21.655C12.3858 22.0899 13.313 22.0899 14.0661 21.655L19.7453 18.3761C20.4974 17.9421 20.9615 17.1385 20.9615 16.2696V9.7118C20.9615 8.84197 20.4974 8.03927 19.7453 7.60435L14.0661 4.32546C13.313 3.89151 12.3858 3.89151 11.6327 4.32546L5.95351 7.60435C5.20141 8.03927 4.7373 8.84197 4.7373 9.7118Z" stroke="#01040E" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                                 <path d="M20.6252 8.46484L12.8531 12.9609L5.08203 8.46484" stroke="#01040E" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />

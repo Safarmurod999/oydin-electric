@@ -124,10 +124,10 @@ const Home = () => {
           {/* Breadcrumb */}
           <ul className='flex items-center justify-start gap-[5px] mb-[20px]'>
             <li className="uppercase font-inter text-dark-gray transition duration-300 hover:text-blue cursor-pointer text-sm">
-              <a href="/">BOSH SAHIFA  /</a>
+              <a aria-label="breadcrumb" href="/">BOSH SAHIFA  /</a>
             </li>
             <li className="uppercase font-inter text-dark-gray transition duration-300 hover:text-blue cursor-pointer text-sm">
-              <a href="/catalog">KATALOG</a>
+              <a aria-label="breadcrumb" href="/catalog">KATALOG</a>
             </li>
           </ul>
           {/* Title */}

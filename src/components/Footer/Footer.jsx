@@ -23,7 +23,7 @@ const Footer = () => {
                         <div className='z-10 text-white text-[20px] xs:text-[25px] md:text-[38px] font-dacia font-bold max-w-[700px] mb-[20px] md:mb-[40px]'>
                             <span className='text-dark-gray'>BIZ HAR QANDAY</span> SAVOLINGIZGA JAVOB BERAMIZ
                         </div>
-                        <iframe className='w-full h-[250px] md:h-[360px] z-10 rounded-xl invert mb-[20px]' src="https://yandex.com/map-widget/v1/?um=constructor%3Aaf038589953fabe73f119757d8d5276be7996e5c1441ec2f1bf5354ec0ae2566&amp;source=constructor"
+                        <iframe title='map' className='w-full h-[250px] md:h-[360px] z-10 rounded-xl invert mb-[20px]' src="https://yandex.com/map-widget/v1/?um=constructor%3Aaf038589953fabe73f119757d8d5276be7996e5c1441ec2f1bf5354ec0ae2566&amp;source=constructor"
                             width="875" height="360">
                         </iframe>
                         <div className="w-full flex flex-wrap items-center justify-start gap-[25px]">
@@ -63,7 +63,7 @@ const Footer = () => {
                             <input type="text" placeholder='Ismingiz' className='w-full bg-[#1E232E] text-white placeholder:text-[#393F53] text-[18px] font-inter px-[30px] h-[54px] md:h-[74px] rounded-lg' />
                             <input type="text" placeholder='Telefon raqamingiz' className='w-full bg-[#1E232E] text-white placeholder:text-[#393F53] text-[18px] font-inter px-[30px] h-[54px] md:h-[74px] rounded-lg' />
                             <textarea name="text" id="area" cols="30" rows="10" placeholder="XABARINGIZ.." className='text-white bg-[#1E232E] placeholder:text-[#393F53] rounded-lg p-[20px] resize-none h-[140px]'></textarea>
-                            <button className='w-full h-[54px] md:h-[74px] bg-white text-black text-[18px] font-inter rounded-lg font-semibold'>SO’ROVNI YUBORISH</button>
+                            <button aria-label='request' className='w-full h-[54px] md:h-[74px] bg-white text-black text-[18px] font-inter rounded-lg font-semibold'>SO’ROVNI YUBORISH</button>
                         </form>
                     </div>
 
@@ -73,28 +73,28 @@ const Footer = () => {
                     {/* <img src={footer_bottom} alt="Image" className='absolute left-0 top-0 w-full h-full rounded-xl' /> */}
                     <div className="w-full flex flex-col sm:flex-row items-start justify-between gap-[15px] sm:gap-[30px] z-10">
                         <div className="max-w-[402px] z-10">
-                            <a href="https://oydin-electric.framer.website/"><img className='w-[100px] md:w-auto' src={footer_logo} alt="Logo" /></a>
+                            <a aria-label='logo' href="https://oydin-electric.framer.website/"><img className='w-[100px] md:w-auto' src={footer_logo} alt="Logo" /></a>
                             <p className='text-dark-gray font-inter text-[12px] md:text-[18px] mt-[20px] md:mt-[32px]'>Kompaniyamiz 10 yildan ortiq vaqt davomida xizmat ko’rsatib kelmoqdamiz</p>
                         </div>
                         <div className="max-w-full sm:max-w-[60%] z-10">
                             <ul className='flex flex-wrap items-center justify-start sm:justify-end gap-[15px] sm:gap-[32px]'>
-                                <li className='font-inter font-bold uppercase text-[14px] sm:text-[18px] text-white cursor-pointer'><a href="/catalog">KATALOG</a></li>
-                                <li className='font-inter font-bold uppercase text-[14px] sm:text-[18px] text-white cursor-pointer'><a href="https://oydin-electric.framer.website/b2b">B2B SOTUV</a></li>
-                                <li className='font-inter font-bold uppercase text-[14px] sm:text-[18px] text-white cursor-pointer'><a href="https://oydin-electric.framer.website/news">YANGILIKLAR</a></li>
-                                <li className='font-inter font-bold uppercase text-[14px] sm:text-[18px] text-white cursor-pointer'><a href="/">BRENDLAR</a></li>
-                                <li className='font-inter font-bold uppercase text-[14px] sm:text-[18px] text-white cursor-pointer'><a href="https://oydin-electric.framer.website/about-us">KOMPANIYA HAQIDA</a></li>
-                                <li className='font-inter font-bold uppercase text-[14px] sm:text-[18px] text-white cursor-pointer'><a href="/">ALOQA</a></li>
+                                <li className='font-inter font-bold uppercase text-[14px] sm:text-[18px] text-white cursor-pointer'><a aria-label='links' href="/catalog">KATALOG</a></li>
+                                <li className='font-inter font-bold uppercase text-[14px] sm:text-[18px] text-white cursor-pointer'><a aria-label='links' href="https://oydin-electric.framer.website/b2b">B2B SOTUV</a></li>
+                                <li className='font-inter font-bold uppercase text-[14px] sm:text-[18px] text-white cursor-pointer'><a aria-label='links' href="https://oydin-electric.framer.website/news">YANGILIKLAR</a></li>
+                                <li className='font-inter font-bold uppercase text-[14px] sm:text-[18px] text-white cursor-pointer'><a aria-label='links' href="/">BRENDLAR</a></li>
+                                <li className='font-inter font-bold uppercase text-[14px] sm:text-[18px] text-white cursor-pointer'><a aria-label='links' href="https://oydin-electric.framer.website/about-us">KOMPANIYA HAQIDA</a></li>
+                                <li className='font-inter font-bold uppercase text-[14px] sm:text-[18px] text-white cursor-pointer'><a aria-label='links' href="/">ALOQA</a></li>
                             </ul>
                             <ul className="flex items-center justify-start sm:justify-end mt-[20px] sm:mt-[40px] gap-[10px] sm:gap-[18px]">
                                 <li className='flex items-center justify-center'>
-                                    <a href="/" className='inline-block p-[10px] sm:p-[18px] rounded-full bg-[#1E232E]'>
+                                    <a aria-label='social' href="/" className='inline-block p-[10px] sm:p-[18px] rounded-full bg-[#1E232E]'>
                                         <svg className='size-[20px] sm:size-[28px]' width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path fillRule="evenodd" clipRule="evenodd" d="M11.3364 22.3186C11.324 22.4219 11.4469 22.4842 11.5235 22.4139C11.9331 22.038 12.7784 21.2623 12.9535 21.103C14.1989 19.9684 14.1978 19.9662 12.7911 19.0075C11.7988 18.3299 11.7853 18.3276 11.6633 19.498C11.5874 20.2184 11.4123 21.6867 11.3364 22.3186ZM17.7544 10.5114C17.8533 10.4187 17.7362 10.2619 17.6214 10.3339C15.6376 11.5787 11.1678 14.3838 9.36283 15.5176C8.91819 15.7976 8.77819 16.1862 8.96523 16.6958C9.33819 17.7072 9.69323 18.7252 10.0684 19.7366C10.0945 19.8076 10.2012 20.0379 10.296 20.2393C10.3433 20.3397 10.4914 20.3166 10.5063 20.2066C10.5414 19.9477 10.584 19.6298 10.596 19.5249C10.6688 18.8854 10.7505 18.247 10.7841 17.6052C10.811 17.0856 11.0473 16.7249 11.4225 16.3856C12.9527 15.0017 16.2121 11.9556 17.7544 10.5114ZM26.2356 5.92024C25.885 7.6428 25.5513 9.36872 25.1559 11.0812C24.2789 14.8825 23.3594 18.6726 22.4567 22.4683C22.4332 22.5691 22.4029 22.6676 22.3749 22.7684C21.9561 24.2692 20.7185 24.6937 19.4506 23.7675C18.1436 22.811 16.8309 21.8612 15.5396 20.8835C15.2092 20.6337 14.993 20.6427 14.6973 20.9283C13.9189 21.6776 13.1249 22.4112 12.3151 23.1246C11.2623 24.0508 10.4515 23.8481 9.95643 22.522C9.23851 20.5968 8.53179 18.667 7.86763 16.7238C7.69179 16.2064 7.40731 15.9611 6.90555 15.8099C5.57499 15.4089 4.26123 14.9497 2.93515 14.5353C2.28107 14.3304 1.69195 14.0414 1.66171 13.2764C1.63371 12.5686 2.16235 12.2203 2.75147 11.9907C6.44411 10.5526 10.1289 9.0932 13.8372 7.6932C17.1378 6.44776 20.4631 5.2684 23.7794 4.06328C24.0516 3.96472 24.3282 3.86504 24.6116 3.80904C25.5053 3.63096 26.0037 3.986 26.2916 4.71848C26.4069 5.0108 26.2826 5.69288 26.2356 5.92024Z" fill="#F8F9FF" />
                                         </svg>
                                     </a>
                                 </li>
                                 <li className='flex items-center justify-center'>
-                                    <a href="/" className='inline-block p-[10px] sm:p-[18px] rounded-full bg-[#1E232E]'>
+                                    <a href="/" aria-label='social' className='inline-block p-[10px] sm:p-[18px] rounded-full bg-[#1E232E]'>
                                         <svg className='size-[20px] sm:size-[28px]' width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path fillRule="evenodd" clipRule="evenodd" d="M13.8261 11.2988C12.1259 11.2988 10.7427 12.6798 10.7427 14.3788C10.7427 16.0779 12.1259 17.4588 13.8261 17.4588C15.5263 17.4588 16.9083 16.0779 16.9083 14.3788C16.9083 12.6798 15.5263 11.2988 13.8261 11.2988Z" fill="#F8F9FF" />
                                             <path fillRule="evenodd" clipRule="evenodd" d="M19.4475 9.98722C18.8091 9.98722 18.2883 9.46978 18.2883 8.83474C18.2883 8.19746 18.8091 7.68002 19.4475 7.68002C20.0859 7.68002 20.6056 8.19746 20.6056 8.83474C20.6056 9.46978 20.0859 9.98722 19.4475 9.98722ZM13.8251 19.1388C11.1999 19.1388 9.0629 17.004 9.0629 14.3788C9.0629 11.7535 11.1999 9.61874 13.8251 9.61874C16.4515 9.61874 18.5874 11.7535 18.5874 14.3788C18.5874 17.004 16.4515 19.1388 13.8251 19.1388ZM18.7229 3.36914H9.2757C5.73762 3.36914 3.35986 5.85778 3.35986 9.56274V18.4556C3.35986 22.1594 5.73762 24.6492 9.2757 24.6492H18.7218C22.261 24.6492 24.6399 22.1594 24.6399 18.4556V9.56274C24.6399 5.85778 22.2621 3.36914 18.7229 3.36914Z" fill="#F8F9FF" />
@@ -103,7 +103,7 @@ const Footer = () => {
                                     </a>
                                 </li>
                                 <li className='flex items-center justify-center'>
-                                    <a href="/" className='inline-block p-[10px] sm:p-[18px] rounded-full bg-[#1E232E]'>
+                                    <a href="/" aria-label='social' className='inline-block p-[10px] sm:p-[18px] rounded-full bg-[#1E232E]'>
                                         <svg className='size-[20px] sm:size-[28px]' width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path fillRule="evenodd" clipRule="evenodd" d="M16.3339 14.1548H14.0615V18.59C14.0615 19.0536 13.6851 19.43 13.2215 19.43C12.7578 19.43 12.3815 19.0536 12.3815 18.59V14.1548H11.6658C11.2021 14.1548 10.8258 13.7784 10.8258 13.3148C10.8258 12.8511 11.2021 12.4748 11.6658 12.4748H12.3815V11.7244C12.3815 9.99506 13.7882 8.58722 15.5163 8.58722H16.3328C16.7965 8.58722 17.1728 8.96354 17.1728 9.42722C17.1728 9.8909 16.7965 10.2672 16.3328 10.2672H15.5163C14.7144 10.2672 14.0615 10.9213 14.0615 11.7244V12.4748H16.3339C16.7976 12.4748 17.1739 12.8511 17.1739 13.3148C17.1739 13.7784 16.7976 14.1548 16.3339 14.1548ZM13.9999 3.36914C8.1333 3.36914 3.35986 8.14258 3.35986 14.0092C3.35986 19.8757 8.1333 24.6492 13.9999 24.6492C19.8664 24.6492 24.6399 19.8757 24.6399 14.0092C24.6399 8.14258 19.8664 3.36914 13.9999 3.36914Z" fill="#F8F9FF" />
                                         </svg>
@@ -111,7 +111,7 @@ const Footer = () => {
                                     </a>
                                 </li>
                                 <li className='flex items-center justify-center'>
-                                    <a href="/" className='inline-block p-[10px] sm:p-[18px] rounded-full bg-[#1E232E]'>
+                                    <a href="/" aria-label='social' className='inline-block p-[10px] sm:p-[18px] rounded-full bg-[#1E232E]'>
                                         <svg className='size-[20px] sm:size-[28px]' width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path fillRule="evenodd" clipRule="evenodd" d="M17.0992 14.9777L12.9865 17.3185C12.8152 17.4114 12.6315 17.4574 12.45 17.4574C12.2563 17.4574 12.0648 17.4047 11.8923 17.3017C11.5607 17.1046 11.3625 16.7585 11.3625 16.3732V11.6905C11.3625 11.2985 11.5663 10.9446 11.9068 10.7486C12.2451 10.5526 12.6483 10.5504 12.9888 10.7464L17.0992 13.0871C17.4374 13.2775 17.648 13.6415 17.648 14.0313C17.648 14.4233 17.4374 14.785 17.0992 14.9777ZM24.1529 8.27788C23.8628 7.07948 22.9579 6.12076 21.792 5.7702C19.8129 5.11724 8.02935 5.1542 6.22391 5.8094C5.05351 6.14316 4.14295 7.10636 3.86183 8.2734C3.19879 10.2121 3.19879 17.8762 3.85175 19.7937C4.17655 20.9641 5.08599 21.8903 6.18695 22.1961C7.15575 22.5478 10.6154 22.7214 14.055 22.7214C17.4721 22.7214 20.8713 22.55 21.783 22.2073C22.9534 21.8601 23.8617 20.898 24.1384 19.7489C24.7992 17.8471 24.8014 10.2032 24.1529 8.27788Z" fill="#F8F9FF" />
                                         </svg>

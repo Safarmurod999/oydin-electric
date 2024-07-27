@@ -10,7 +10,7 @@ const Bookmarks = () => {
         <>
             <div className={`fixed top-0 left-0 z-50 w-full h-dvh bg-blur backdrop-blur transition duration-300 ${isBookMarkOpen ? 'flex' : 'hidden'}`}>
                 <div className="fixed top-0 right-0 z-50 w-full h-dvh max-w-[670px] bg-[#FDFDFD] p-[20px]">
-                    <button className='flex bg-blue rounded-full p-[11px] ms-auto' onClick={() => dispatch(setBookmarkOpen(false))}>
+                    <button aria-label="bookmatk-btn" className='flex bg-blue rounded-full p-[11px] ms-auto' onClick={() => dispatch(setBookmarkOpen(false))}>
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M5 5L15 15" stroke="#F8F9FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             <path d="M15 5L5 15" stroke="#F8F9FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -29,7 +29,7 @@ const Bookmarks = () => {
                                         {el.image ? <img src={el.image} alt="product-image" className="h-full" /> : <p className="text-black">No Image</p>}
                                     </div>
                                     <div className="text-[16px] sm:text-[22px] font-semibold font-inter text-black first-letter:uppercase">{el.name_uz}</div>
-                                    <button onClick={() => dispatch(removeBookmark(el.id))} className='flex border border-light-gray rounded-full p-[11px] ms-auto'>
+                                    <button aria-label="remove-btn" onClick={() => dispatch(removeBookmark(el.id))} className='flex border border-light-gray rounded-full p-[11px] ms-auto'>
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M5 5L15 15" stroke="#01040E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                             <path d="M15 5L5 15" stroke="#01040E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -45,7 +45,7 @@ const Bookmarks = () => {
                             <path className="group-hover:fill-yellow" d="M0 6C0 2.68629 2.68629 0 6 0H20V54H14.2687C12.4659 54 10.7588 53.1895 9.61929 51.7925L1.35063 41.6558C0.47708 40.5849 0 39.2452 0 37.8632V6Z" fill="#0236E5" />
                         </svg>
 
-                        <button className="relative flex items-center justify-center gap-[10px] grow py-[15px] -mx-[1px] bg-blue group-hover:bg-yellow">
+                        <button aria-label="all-btn" className="relative flex items-center justify-center gap-[10px] grow py-[15px] -mx-[1px] bg-blue group-hover:bg-yellow">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fillRule="evenodd" clipRule="evenodd" d="M11.3291 13.15C8.94208 13.15 7.00008 11.208 7.00008 8.82C7.00008 8.406 7.33608 8.07 7.75008 8.07C8.16408 8.07 8.50008 8.406 8.50008 8.82C8.50008 10.38 9.76908 11.65 11.3291 11.65C12.8901 11.65 14.1591 10.38 14.1591 8.82C14.1591 8.406 14.4951 8.07 14.9091 8.07C15.3231 8.07 15.6591 8.406 15.6591 8.82C15.6591 11.208 13.7171 13.15 11.3291 13.15ZM20.2851 13.0601C20.5783 13.0636 20.8301 12.8349 20.8301 12.5417V8.026C20.8301 4.721 18.7071 2.5 15.5471 2.5H7.11208C3.95308 2.5 1.83008 4.721 1.83008 8.026V15.974C1.83008 19.279 3.95308 21.5 7.11208 21.5H11.9487C12.2441 21.5 12.4736 21.2446 12.4671 20.9492C12.3736 16.6987 16.0185 13.0084 20.2851 13.0601Z" fill="#F8F9FF" />
                                 <path fillRule="evenodd" clipRule="evenodd" d="M21.9501 16.4303C21.6571 16.1373 21.1821 16.1373 20.8891 16.4303L17.8741 19.4463L16.6311 18.2023C16.3381 17.9093 15.8631 17.9093 15.5701 18.2023C15.2771 18.4953 15.2771 18.9703 15.5701 19.2633L17.3441 21.0363C17.4901 21.1833 17.6821 21.2563 17.8741 21.2563C18.0661 21.2563 18.2581 21.1833 18.4041 21.0363L21.9501 17.4913C22.2431 17.1983 22.2431 16.7233 21.9501 16.4303Z" fill="#F8F9FF" />

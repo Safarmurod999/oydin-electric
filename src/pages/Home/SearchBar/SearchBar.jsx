@@ -53,7 +53,7 @@ const SearchBar = ({ search, setSearch, params, brand, category, setParams, setS
                 {/* Filter */}
                 <div className="grow md:w-[170px] xl:w-[264px] relative inline-block text-left">
                     <div>
-                        <button className="inline-flex w-full justify-between
+                        <button aria-label='select-btn' className="inline-flex w-full justify-between
                             gap-x-1.5 rounded-lg bg-white ps-[10px] lg:ps-[20px] pe-[10px] lg:pe-[14px] 
                             py-4 font-semibold text-gray-900 shadow-sm border
                             border-[#DFE1E7] ring-inset ring-gray-300 hover:bg-gray-50"
@@ -69,7 +69,7 @@ const SearchBar = ({ search, setSearch, params, brand, category, setParams, setS
                     </div>
 
                     <div className={`absolute right-0 z-20 mt-2 w-full origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none ${openSelect ? 'block' : 'hidden'}`} aria-orientation="vertical">
-                        <div className="py-1" role="none">
+                        <div className="py-1">
                             {/* <div className="block px-4 py-2 text-dark-gray hover:bg-[#F3F4F6] cursor-pointer" onClick={() => handleFilter("latest", "So'nggi Tovarlar")} id="menu-item-0">So'nggi Tovarlar</div> */}
                             <div className="block px-4 py-2 text-dark-gray hover:bg-[#F3F4F6] cursor-pointer" onClick={() => handleFilter("ascending", "Harflar: O'sish tartibida")} id="menu-item-1">Harflar: O'sish tartibida</div>
                             <div className="block px-4 py-2 text-dark-gray hover:bg-[#F3F4F6] cursor-pointer" onClick={() => handleFilter('descending', "Harflar: Kamayish tartibida")} id="menu-item-2">Harflar: Kamayish tartibida</div>
