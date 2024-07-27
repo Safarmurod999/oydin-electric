@@ -14,7 +14,7 @@ const Pagination = ({ itemsPerPage, totalItems, offset, setOffset }) => {
         pageNumbers.push(i);
     }
     return (
-        <div className='pagination'>
+        <ul className='pagination'>
             <ReactPaginate
                 className="pagination-wrapper"
                 breakLabel="..."
@@ -26,7 +26,7 @@ const Pagination = ({ itemsPerPage, totalItems, offset, setOffset }) => {
                 previousLabel="< Oldingisi"
                 renderOnZeroPageCount={null}
             />
-        </div>
+        </ul>
     )
 }
 

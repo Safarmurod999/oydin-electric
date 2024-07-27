@@ -31,7 +31,7 @@ const Header = () => {
                 <Container style={'flex items-center justify-between'}>
                     <div className='navbar-logo'>
                         <a aria-label='logo' href="https://oydin-electric.framer.website/">
-                            <img src={logo} alt="Logo" />
+                            <img className='w-full max-w-[136px]' src={logo} alt="Logo" />
                         </a>
                     </div>
                     <div className={`flex grow-[0.5] flex-col xl:flex-row items-start 
