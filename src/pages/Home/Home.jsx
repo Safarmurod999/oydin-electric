@@ -116,7 +116,7 @@ const Home = () => {
     setCurrentPage(pageNumber);
   };
   const filterArray = filterHandler(state.data, state.filter);
-  console.log(data[2]);
+
   return (
     !loading && (
       <section id='#'>

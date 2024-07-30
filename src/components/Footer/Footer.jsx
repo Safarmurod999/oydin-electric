@@ -2,7 +2,6 @@ import React from 'react'
 import Container from '../Container/Container'
 import footer_map from "@/assets/images/footer-map.png"
 import footer_form from "@/assets/images/footer-form.png"
-import footer_bottom from "@/assets/images/footer-bottom.png"
 import footer_logo from "@/assets/icons/footer-logo.svg"
 
 const Footer = () => {
@@ -70,7 +69,6 @@ const Footer = () => {
                 </div>
                 {/* Footer Bottom */}
                 <div className="relative w-full mt-[35px] p-[25px] xs:p-[30px] md:p-[45px] xl:p-[60px] rounded-lg bg-footer-bottom bg-center bg-no-repeat bg-[length:100%_100%]">
-                    {/* <img src={footer_bottom} alt="Image" className='absolute left-0 top-0 w-full h-full rounded-xl' /> */}
                     <div className="w-full flex flex-col sm:flex-row items-start justify-between gap-[15px] sm:gap-[30px] z-10">
                         <div className="max-w-[402px] z-10">
                             <a aria-label='logo' href="https://oydin-electric.framer.website/"><img className='w-[100px] md:w-auto' src={footer_logo} alt="Logo" /></a>

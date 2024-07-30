@@ -12,7 +12,7 @@ const ProductCard = ({ el }) => {
     const firstPart = name.slice(0, midIndex).join(' ');
     const secondPart = name.slice(midIndex).join(' ');
     return (
-        <div className="flex flex-col relative w-full h-full">
+        <div key={el.id} className="flex flex-col relative w-card-xl lg:w-card-2xl 3xl:w-card-3xl">
             <div className="w-full relative flex items-center justify-center min-h-[154px] max-h-[154px] slider:min-h-[295px] slider:max-h-[295px] px-[30px] pt-[30px] pb-[30px] z-10 overflow-hidden">
                 {
                     el.image ? <img src={el?.image} alt={el.image} className=" z-10 h-full max-h-[240px]" /> : <p className="text-black">No Image</p>
@@ -31,7 +31,7 @@ const ProductCard = ({ el }) => {
                     {
                         el?.characteristics.slice(0, 3).map(data => {
                             return (
-                                <div key={data.id} className="w-full flex items-center justify-between py-[6px] slider:py-[15px] gap-[10px] inner-border">
+                                <div key={data.id} className="w-full flex items-center justify-between py-[6px] slider:py-[15px] inner-border">
                                     <div className=" font-inter text-[6px] slider:text-[14px] md:text-[16px] font-bold text-black first-letter:uppercase">{data.name}</div>
                                     <div className=" font-inter text-[6px] slider:text-[14px] md:text-[16px] font-bold text-dark-gray text-end uppercase">{data.value}</div>
                                 </div>
@@ -39,7 +39,7 @@ const ProductCard = ({ el }) => {
                         })
                     }
                 </div>
-                <div className="w-full flex items-center justify-between gap-[5px] slider:gap-[12px] mt-auto">
+                <div className="w-full flex stretch justify-between gap-[5px] slider:gap-[12px] h-[54px] mt-auto">
                     <div className="group flex items-stretch justify-between grow">
                         <svg className="w-[9px] h-[21px] slider:w-[20px] slider:h-[54px]" width="20" height="54" viewBox="0 0 20 54" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path className="group-hover:fill-yellow" d="M0 6C0 2.68629 2.68629 0 6 0H20V54H14.2687C12.4659 54 10.7588 53.1895 9.61929 51.7925L1.35063 41.6558C0.47708 40.5849 0 39.2452 0 37.8632V6Z" fill="#0236E5" />
@@ -57,13 +57,6 @@ const ProductCard = ({ el }) => {
                         </svg>
 
                     </div>
-                    <button
-                        aria-label='bookmark-btn'
-                        onClick={() => dispatch(addBookmark(el))} className={`flex items-center justify-center size-[21px] slider:size-[54px] rounded-[4.7px] slider:rounded-xl ${bookmarks.find(item => item.id == el.id) ? 'bg-black' : 'bg-yellow'}`}>
-                        <svg className="size-[10px] slider:size-[28px]" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M23.1537 11.4539C23.143 8.72293 21.7103 6.15468 18.8855 5.24471C16.9459 4.61878 14.8331 4.96686 13.1923 7.32261C11.5515 4.96686 9.43861 4.61878 7.49899 5.24471C4.67395 6.15478 3.24118 8.72352 3.23081 11.4548C3.20468 16.8864 8.70862 21.0429 13.1909 23.0295L13.1923 23.0289L13.1937 23.0295C17.6761 21.0428 23.1805 16.886 23.1537 11.4539Z" fill={`${bookmarks.find(item => item.id == el.id) ? 'white' : '#231C04'}`} />
-                        </svg>
-                    </button>
                 </div>
             </div>
         </div>

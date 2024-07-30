@@ -3,7 +3,6 @@ import { Context } from '@/context/catalogContext';
 
 const SearchBar = ({ search, setSearch, params, brand, category, setParams, setSearchParams, searchParams }) => {
     const [openSelect, setOpenSelect] = useState(false);
-    // const [layout, setLayout] = useState('grid');
     const [filter, setFilter] = useState("So'nggi tovarlar");
     const { state, dispatch } = useContext(Context)
     const handleFilter = (filter, name) => {
@@ -76,22 +75,6 @@ const SearchBar = ({ search, setSearch, params, brand, category, setParams, setS
                         </div>
                     </div>
                 </div>
-                {/* Layout
-                <div className="flex items-center w-[112px] rounded-lg border border-gray">
-                    <div className={`p-4 rounded-lg transition duration-300 cursor-pointer ${layout == 'column' ? 'bg-[#EBEBEB]' : ''}`} onClick={() => setLayout('column')}>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8.16004 18.0115H19.6806M8.16004 12.2515H19.6806M8.16004 6.49149H19.6806M4.33091 6.47736V6.53878M4.33091 12.3611V12.4225M4.33091 17.9974V18.0588M4.5798 6.49056C4.5798 6.62882 4.46763 6.7409 4.32937 6.7409C4.19112 6.7409 4.0791 6.62882 4.0791 6.49056C4.0791 6.35231 4.19112 6.24023 4.32937 6.24023C4.46763 6.24023 4.5798 6.35231 4.5798 6.49056ZM4.5798 12.3743C4.5798 12.5126 4.46763 12.6246 4.32937 12.6246C4.19112 12.6246 4.0791 12.5126 4.0791 12.3743C4.0791 12.2361 4.19112 12.124 4.32937 12.124C4.46763 12.124 4.5798 12.2361 4.5798 12.3743ZM4.5798 18.0106C4.5798 18.1488 4.46763 18.2609 4.32937 18.2609C4.19112 18.2609 4.0791 18.1488 4.0791 18.0106C4.0791 17.8723 4.19112 17.7602 4.32937 17.7602C4.46763 17.7602 4.5798 17.8723 4.5798 18.0106Z" className={`${!layout == 'column' ? 'stroke-[#66708D]' : 'stroke-[#01040E]'}`} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                    </div>
-                    <div className={`p-4 rounded-lg transition duration-300 cursor-pointer ${layout == 'grid' ? 'bg-[#EBEBEB]' : ''}`} onClick={() => setLayout('grid')}>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.10875 4.842C3.21375 3.859 4.02775 3.103 5.01575 3.072C6.08175 2.976 7.15475 2.976 8.22075 3.072C9.21375 3.092 10.0338 3.853 10.1277 4.842C10.2727 6.02 10.2727 7.21 10.1277 8.388C10.0278 9.373 9.21075 10.13 8.22075 10.154C7.15475 10.252 6.08175 10.252 5.01575 10.154C4.02575 10.13 3.20875 9.373 3.10875 8.388C2.96375 7.21 2.96375 6.02 3.10875 4.842Z" className={`${!layout == 'grid' ? 'stroke-[#66708D]' : 'stroke-[#01040E]'}`} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            <path d="M3.10875 15.6099C3.21475 14.6279 4.02875 13.8749 5.01575 13.8439C6.08175 13.7459 7.15375 13.7449 8.22075 13.8399C9.21375 13.8599 10.0338 14.6219 10.1277 15.6109C10.2727 16.7879 10.2727 17.9789 10.1277 19.1559C10.0307 20.1429 9.21175 20.9029 8.22075 20.9279C7.15475 21.0239 6.08175 21.0239 5.01575 20.9279C4.02375 20.9029 3.20675 20.1429 3.10875 19.1559C2.96375 17.9779 2.96375 16.7879 3.10875 15.6099Z" className={`${!layout == 'grid' ? 'stroke-[#66708D]' : 'stroke-[#01040E]'}`} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            <path d="M13.8732 15.6099C13.9782 14.6279 14.7922 13.8749 15.7792 13.8439C16.8452 13.7459 17.9172 13.7449 18.9842 13.8399C19.9772 13.8599 20.7972 14.6219 20.8902 15.6109C21.0362 16.7879 21.0362 17.9789 20.8902 19.1559C20.7932 20.1429 19.9752 20.9029 18.9842 20.9279C17.9182 21.0239 16.8452 21.0239 15.7792 20.9279C14.7882 20.9019 13.9702 20.1429 13.8732 19.1559C13.7272 17.9779 13.7272 16.7879 13.8732 15.6099Z" className={`${!layout == 'grid' ? 'stroke-[#66708D]' : 'stroke-[#01040E]'}`} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            <path d="M13.8732 4.842C13.9772 3.859 14.7912 3.103 15.7792 3.072C16.8452 2.976 17.9182 2.976 18.9842 3.072C19.9762 3.092 20.7972 3.854 20.8902 4.842C21.0362 6.02 21.0362 7.21 20.8902 8.388C20.7912 9.373 19.9742 10.13 18.9842 10.154C17.9182 10.252 16.8452 10.252 15.7792 10.154C14.7892 10.13 13.9722 9.373 13.8732 8.388C13.7272 7.21 13.7272 6.02 13.8732 4.842Z" className={`${!layout == 'grid' ? 'stroke-[#66708D]' : 'stroke-[#01040E]'}`} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                    </div>
-                </div> */}
             </div>
         </div>
     )
