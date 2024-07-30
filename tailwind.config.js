@@ -29,25 +29,28 @@ module.exports = {
         "card-bg": "#EBEBEB",
         footer: "#11141C",
         "footer-card": "#171B24",
-        "light-gray":"rgb(206,208,217)",
-        blur:'rgba(85, 84, 94, 0.3)'
+        "light-gray": "rgb(206,208,217)",
+        blur: "rgba(85, 84, 94, 0.3)",
       },
       width: {
         "nav-mobile": "calc(100% - 30px)",
         "col-3": "calc(100% / 3 - 10px)",
         "brand-width": "calc(50% - 8px)",
+        "card-3xl": "calc(100% / 4 - 22.5px)",
+        "card-2xl": "calc(100% / 3 - 20px)",
+        "card-xl": "calc(50% - 5px)",
       },
       screens: {
         xxs: "335px",
-        mini:"400px",
+        mini: "400px",
         xs: "480px",
-        slider:"540px",
-        "inner":"1280px",
+        slider: "540px",
+        inner: "1280px",
         "3xl": "1710px",
       },
-      backgroundImage:{
-        'footer-bottom':'url(@/assets/images/footer-bottom.png)'
-      }
+      backgroundImage: {
+        "footer-bottom": "url(@/assets/images/footer-bottom.png)",
+      },
     },
   },
 };

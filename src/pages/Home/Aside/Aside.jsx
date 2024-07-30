@@ -26,13 +26,10 @@ const Aside = ({ openAside, setOpenAside, category, brand, search, setBrand, set
             categoryArray = categoryArray.filter((item) => item != newCategory);
             if (categoryArray.length == 0) {
                 delete params.category;
-
-                console.log(categoryArray);
                 searchParams.delete('category');
                 setCategory([]);
             } else {
                 setCategory(categoryArray);
-                console.log(categoryArray); 
                 params.category = categoryArray;
             }
         }
