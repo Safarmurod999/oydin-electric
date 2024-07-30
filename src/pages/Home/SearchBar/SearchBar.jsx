@@ -3,8 +3,8 @@ import { Context } from '@/context/catalogContext';
 
 const SearchBar = ({ search, setSearch, params, brand, category, setParams, setSearchParams, searchParams }) => {
     const [openSelect, setOpenSelect] = useState(false);
-    const [layout, setLayout] = useState('grid');
-    const [filter, setFilter] = useState("Harflar: O'sish tartibida");
+    // const [layout, setLayout] = useState('grid');
+    const [filter, setFilter] = useState("So'nggi tovarlar");
     const { state, dispatch } = useContext(Context)
     const handleFilter = (filter, name) => {
         dispatch({ type: 'ON_FILTER', payload: filter })
@@ -70,13 +70,13 @@ const SearchBar = ({ search, setSearch, params, brand, category, setParams, setS
 
                     <div className={`absolute right-0 z-20 mt-2 w-full origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none ${openSelect ? 'block' : 'hidden'}`} aria-orientation="vertical">
                         <div className="py-1">
-                            {/* <div className="block px-4 py-2 text-dark-gray hover:bg-[#F3F4F6] cursor-pointer" onClick={() => handleFilter("latest", "So'nggi Tovarlar")} id="menu-item-0">So'nggi Tovarlar</div> */}
+                            <div className="block px-4 py-2 text-dark-gray hover:bg-[#F3F4F6] cursor-pointer" onClick={() => handleFilter("latest", "So'nggi Tovarlar")} id="menu-item-0">So'nggi Tovarlar</div>
                             <div className="block px-4 py-2 text-dark-gray hover:bg-[#F3F4F6] cursor-pointer" onClick={() => handleFilter("ascending", "Harflar: O'sish tartibida")} id="menu-item-1">Harflar: O'sish tartibida</div>
                             <div className="block px-4 py-2 text-dark-gray hover:bg-[#F3F4F6] cursor-pointer" onClick={() => handleFilter('descending', "Harflar: Kamayish tartibida")} id="menu-item-2">Harflar: Kamayish tartibida</div>
                         </div>
                     </div>
                 </div>
-                {/* Layout */}
+                {/* Layout
                 <div className="flex items-center w-[112px] rounded-lg border border-gray">
                     <div className={`p-4 rounded-lg transition duration-300 cursor-pointer ${layout == 'column' ? 'bg-[#EBEBEB]' : ''}`} onClick={() => setLayout('column')}>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -91,7 +91,7 @@ const SearchBar = ({ search, setSearch, params, brand, category, setParams, setS
                             <path d="M13.8732 4.842C13.9772 3.859 14.7912 3.103 15.7792 3.072C16.8452 2.976 17.9182 2.976 18.9842 3.072C19.9762 3.092 20.7972 3.854 20.8902 4.842C21.0362 6.02 21.0362 7.21 20.8902 8.388C20.7912 9.373 19.9742 10.13 18.9842 10.154C17.9182 10.252 16.8452 10.252 15.7792 10.154C14.7892 10.13 13.9722 9.373 13.8732 8.388C13.7272 7.21 13.7272 6.02 13.8732 4.842Z" className={`${!layout == 'grid' ? 'stroke-[#66708D]' : 'stroke-[#01040E]'}`} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     )

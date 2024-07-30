@@ -158,7 +158,7 @@ const ProductInner = () => {
                                 </p>
                                 <div className="flex flex-col">
                                     {
-                                        product[0].characteristics.map(el => {
+                                        product[0]?.characteristics.map(el => {
                                             return (
                                                 <div key={el.id} className="w-full flex items-center justify-between py-[15px] inner-border">
                                                     <div className="text-[16px] font-inter sm:text-[14px] font-bold text-black first-letter:uppercase">{el.name}</div>
@@ -180,7 +180,7 @@ const ProductInner = () => {
                     <div className='mx-auto max-w-[960px] text-2xl xs:text-3xl sm:text-4xl md:text-5xl xl:text-6xl text-black text-center font-dacia font-bold '>
                         O’XSHASH MAHSULOTLARIMIZ
                     </div>
-                    <div className=" grow mb-12 mt-[40px] md:mt-[60px] xl:mt-[80px] 2xl:mt-[100px] 3xl:mt-[120px]">
+                    <div className="grow mb-12 mt-[40px] md:mt-[60px] xl:mt-[80px] 2xl:mt-[100px] 3xl:mt-[120px]">
                         <Swiper
                             slidesPerView={4}
                             spaceBetween={16}
@@ -205,17 +205,25 @@ const ProductInner = () => {
                                 products.map(el => {
                                     return <SwiperSlide key={el.id} className='w-auto'>
                                         <div className="flex flex-col relative w-full max-w-full slider:max-w-[395px]">
-                                            <div className="w-full relative flex items-center justify-center pt-[55px] h-[295px] 3xl:pt-[75px] px-[60px] 3xl:px-[80px] pb-[45px] z-10">
+                                            {/* <div className="w-full relative flex items-center justify-center pt-[55px] h-[295px] 3xl:pt-[75px] px-[60px] 3xl:px-[80px] pb-[45px] z-10">
                                                 {
                                                     el.image ? <img src={el?.image} alt={el.image} className="w-full h-full z-10" /> : <p className="text-black">No Image</p>
                                                 }
-                                                {/* <img src={el.image} alt={el.image} className="w-full h-full z-10" /> */}
+                                               
                                                 {
                                                     el.brand_image && <img src={el.brand_image} alt={el.brand_image} className="absolute top-[30px] left-[30px] w-[70px] 3xl:w-[108px] z-10" />
                                                 }
                                                 <img src={corner} alt="corner" className="absolute top-0 right-0 z-0 w-full h-full" />
+                                            </div> */}
+                                            <div className="w-full relative flex items-center justify-center min-h-[154px] max-h-[154px] slider:min-h-[295px] slider:max-h-[295px] px-[30px] pt-[30px] pb-[30px] z-10 overflow-hidden">
+                                                {
+                                                    el.image ? <img src={el?.image} alt={el.image} className=" z-10 h-full max-h-[240px]" /> : <p className="text-black">No Image</p>
+                                                }
+                                                {
+                                                    el.brand_image && <img src={el?.brand_image} alt={el.brand} className="absolute top-[20px] left-[20px] w-[43px] slider:w-[70px] 3xl:w-[108px] z-10" />
+                                                }
+                                                <img src={corner} alt="corner" className="absolute top-0 right-0 z-0 w-full h-full" />
                                             </div>
-
                                             <div className="px-[30px] pt-[50px]  pb-[40px] -mt-[45px] 3xl:-mt-[40px] 3xl:-mt-12 border-[3px] border-gray rounded-3xl">
                                                 <div className="flex flex-col mb-[20px] xl:mb-[40px]">
                                                     <div className="w-full flex items-center justify-between py-[15px] inner-border">
@@ -223,7 +231,7 @@ const ProductInner = () => {
                                                         <div className="text-[16px] font-inter sm:text-[14px] font-bold text-dark-gray text-end uppercase">{el.name_uz}</div>
                                                     </div>
                                                     {
-                                                        el.characteristics.map(item => {
+                                                        el?.characteristics.slice(0, 3).map(item => {
                                                             return (
                                                                 <div key={item.id} className="w-full flex items-center justify-between py-[15px] inner-border gap-[10px] overflow-hidden">
                                                                     <div className="text-[16px] font-inter sm:text-[14px] font-bold text-black first-letter:uppercase">{item.name}</div>

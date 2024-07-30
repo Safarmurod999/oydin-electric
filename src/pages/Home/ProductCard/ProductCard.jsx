@@ -9,23 +9,23 @@ const ProductCard = ({ el }) => {
     const { bookmarks } = useSelector(state => state.cart);
     return (
         <div className="flex flex-col relative w-full h-full">
-            <div className="w-full relative flex items-center justify-center pt-[55px] 3xl:pt-[75px] min-h-[154px] max-h-[154px] sm:min-h-[295px] sm:max-h-[295px] px-[60px] 3xl:px-[80px] pb-[45px] z-10 overflow-hidden">
+            <div className="w-full relative flex items-center justify-center min-h-[154px] max-h-[154px] slider:min-h-[295px] slider:max-h-[295px] px-[30px] pt-[30px] pb-[30px] z-10 overflow-hidden">
                 {
-                    el.image ? <img src={el?.image} alt={el.image} className="max-w-[92px] sm:max-w-full w-full z-10 h-full" /> : <p className="text-black">No Image</p>
+                    el.image ? <img src={el?.image} alt={el.image} className=" z-10 h-full max-h-[240px]" /> : <p className="text-black">No Image</p>
                 }
                 {
-                    el.brand_image && <img src={el?.brand_image} alt={el.brand} className="absolute top-[30px] left-[30px] w-[43px] sm:w-[70px] 3xl:w-[108px] z-10" />
+                    el.brand_image && <img src={el?.brand_image} alt={el.brand} className="absolute top-[20px] left-[20px] w-[43px] slider:w-[70px] 3xl:w-[108px] z-10" />
                 }
                 <img src={corner} alt="corner" className="absolute top-0 right-0 z-0 w-full h-full" />
             </div>
-            <div className="flex flex-col items-center justify-between px-[12px] slider:px-[30px] pt-[50px] pb-[15px] slider:pb-[40px] -mt-[45px] 3xl:-mt-[40px] 3xl:-mt-12 border-[3px] border-gray rounded-xl slider:rounded-3xl h-full">
+            <div className="flex flex-col items-center justify-between px-[12px] mini:px-[15px] sm:px-[30px] pt-[50px] pb-[15px] mini:pb-[25px] slider:pb-[40px] -mt-[45px] 3xl:-mt-[40px] 3xl:-mt-12 border-[3px] border-gray rounded-xl slider:rounded-3xl h-full">
                 <div className="w-full flex flex-col  mb-[20px] xl:mb-[40px]">
                     <div className="w-full flex items-center justify-between py-[15px]">
                         <div className="text-[6px] slider:text-[14px] sm:text-[18px] font-bold font-dacia first-letter:uppercase text-blue">{el.name_uz.split(" ")[0]}</div>
                         {/* <div className="text-[18px] sm:text-[14px] font-bold font-dacia first-letter:uppercase text-dark-gray text-end uppercase">{el.name_uz.split(" ")[1]}</div> */}
                     </div>
                     {
-                        el.characteristics.map(data => {
+                        el?.characteristics.slice(0,3).map(data => {
                             return (
                                 <div key={data.id} className="w-full flex items-center justify-between py-[6px] slider:py-[15px] inner-border">
                                     <div className=" font-inter text-[6px] slider:text-[14px] md:text-[16px] font-bold text-black first-letter:uppercase">{data.name}</div>

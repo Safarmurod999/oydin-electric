@@ -195,7 +195,7 @@ const Home = () => {
                 <p>Filtrlar</p>
               </div>
               {!isLoading && items?.count == 0 && <div className="text-center w-full text-[30px] min-h-[710px] flex items-center justify-center">Ma'lumot topilmadi</div>}
-              <div className="relative grid grid-cols-2 2xl:grid-cols-3 grid-rows-3 gap-[10px] md:gap-8 grow mb-12 min-h-[770px] slider:min-h-[2015px]">
+              <div className="relative grid grid-cols-2 2xl:grid-cols-3 gap-[10px] md:gap-8 grow mb-12 sm:min-h-[665px]  ">
                 {
                   !isLoading ? filterArray.length ? (filterArray.map(el => {
                     let item = products.find(_el => _el.id == el.id);

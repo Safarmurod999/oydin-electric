@@ -2,7 +2,7 @@ import { createContext, useReducer } from 'react'
 
 const initialValue = {
 	data: [],
-	filter: 'ascending',
+	filter: 'latest',
 }
 
 export const Context = createContext()

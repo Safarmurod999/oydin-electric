@@ -8,7 +8,9 @@ const filterHandler = (arr, filter) => {
         //     sensitivity: "base",
         //   });
         // } else {
-          return a.name_uz.toLowerCase().localeCompare(b.name_uz.toLowerCase(), "en", {
+        return a.name_uz
+          .toLowerCase()
+          .localeCompare(b.name_uz.toLowerCase(), "en", {
             sensitivity: "base",
           });
         // }
@@ -20,15 +22,17 @@ const filterHandler = (arr, filter) => {
         //     sensitivity: "base",
         //   });
         // } else {
-          return b.name_uz.toLowerCase().localeCompare(a.name_uz.toLowerCase(), "en", {
+        return b.name_uz
+          .toLowerCase()
+          .localeCompare(a.name_uz.toLowerCase(), "en", {
             sensitivity: "base",
           });
         // }
       });
-    // case "latest":
-    //   return arr.sort((a, b) => {
-    //     return a.created_at - b.created_at;
-    //   });
+    case "latest":
+      return arr.sort((a, b) => {
+        return new Date(b.created_at) - new Date(a.created_at);
+      });
     default:
       return arr;
   }
