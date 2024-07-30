@@ -1,5 +1,6 @@
 import ReactPaginate from "react-paginate";
-import "./Pagination.scss"
+import "./Pagination.scss";
+
 const Pagination = ({ itemsPerPage, totalItems, offset, setOffset }) => {
     const endOffset = offset + itemsPerPage;
     const pageCount = Math.ceil(totalItems / itemsPerPage);
@@ -14,7 +15,7 @@ const Pagination = ({ itemsPerPage, totalItems, offset, setOffset }) => {
         pageNumbers.push(i);
     }
     return (
-        <ul className='pagination'>
+        <div className='pagination'>
             <ReactPaginate
                 className="pagination-wrapper"
                 breakLabel="..."
@@ -26,7 +27,7 @@ const Pagination = ({ itemsPerPage, totalItems, offset, setOffset }) => {
                 previousLabel="< Oldingisi"
                 renderOnZeroPageCount={null}
             />
-        </ul>
+        </div>
     )
 }
 

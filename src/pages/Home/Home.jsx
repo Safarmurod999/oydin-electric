@@ -116,7 +116,7 @@ const Home = () => {
     setCurrentPage(pageNumber);
   };
   const filterArray = filterHandler(state.data, state.filter);
-
+  console.log(data[2]);
   return (
     !loading && (
       <section id='#'>
@@ -150,7 +150,7 @@ const Home = () => {
               data[2].map(item => (
                 <li key={item.id} onClick={() => handleBrand(item.id)} className="relative group w-brand-width xs:w-col-3 md:w-[220px] h-[72px] flex items-center justify-start gap-[10px] md:gap-[15px] -mb-[30px] xxs:-mb-[10px] md:mb-0 px-[12px] pe-[20px] cursor-pointer">
                   <div className="min-w-[30px] h-[30px] md:min-w-[48px] md:h-[48px] flex items-center justify-center bg-[#ffffff] rounded-md z-10">
-                    <img src={item.brand_image} alt={item.brand} className="w-[28px] h-[28px] object-contain z-10" />
+                    <img src={item.brand_image} alt={item.name} className="w-[28px] h-[28px] object-contain z-10" />
                   </div>
                   <div className={`text-[9px] sm:text-sm font-bold text-black z-10 uppercase group-hover:text-white  ${brand.find((el) => el == item.id) ? 'text-white' : 'text-black'}`}>{item.name}</div>
                   <svg className="absolute z-0 top-0 left-0 w-full" width="220" height="72" viewBox="0 0 220 72" fill="none" xmlns="http://www.w3.org/2000/svg">
