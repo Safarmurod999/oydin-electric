@@ -26,7 +26,7 @@ const ProductCard = ({ el }) => {
                 <div className="w-full flex flex-col  mb-[20px] xl:mb-[40px]">
                     <div className="w-full flex items-center justify-between py-[15px]">
                         <div className="text-[6px] slider:text-[14px] sm:text-[18px] font-bold font-dacia first-letter:uppercase text-blue">{firstPart}</div>
-                        <div className="text-[18px] sm:text-[14px] font-bold font-dacia first-letter:uppercase text-dark-gray text-end uppercase">{secondPart}</div>
+                        <div className="text-[6px] slider:text-[14px] sm:text-[18px] font-bold font-dacia first-letter:uppercase text-dark-gray text-end uppercase">{secondPart}</div>
                     </div>
                     {
                         el?.characteristics.slice(0, 3).map(data => {
